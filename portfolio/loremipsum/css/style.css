@@ -1,0 +1,408 @@
+body
+{
+	margin: 0;
+	font-size: 20px;
+	font-family: Verdana, Geneva, sans-serif;
+	background-color: #eee;
+	color: #fff;
+	background: url('../images/bg.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	min-width: 1200px;
+}
+
+/* ID = logo */
+
+#logo
+{
+	width: 100%;
+	min-width: 1200px;
+	height: 100vh;
+	min-height: 560px;
+	position: relative;
+	text-align: center;
+}
+#logo > span
+{
+	font-family: Righteous, sans-serif;
+	font-size: 100px;
+	line-height: 100px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translateY(-50%) translateX(-50%);
+}
+#logo > span > a
+{
+	font-size: 20px;
+	text-decoration: none;
+	color: #fff;
+}
+
+/* ID = nav */
+
+#nav
+{
+	width: 100%;
+	height: 50px;
+	line-height: 50px;
+	min-width: 1200px;
+}
+#nav > a
+{
+	color: #51baa4;
+	padding: 0 10px;
+	line-height: 40px;
+	font-size: 18px;
+	border: 3px solid #51baa4;
+	border-radius: 20px;
+	font-family: Righteous, sans-serif;
+	transition-duration: 250ms;
+	display: block;
+	float: left;
+	margin: 3px;
+	text-decoration: none;
+	position: relative;
+}
+#nav > a:hover
+{
+	background-color: #51baa4;
+	color: #fff;
+	text-shadow: 0px 0px 10px #777;
+}
+#nav ol
+{
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	text-align: left;
+	float: left;
+	transition:250ms;
+}
+#nav ol > li
+{
+	display: inline-block;
+}
+#nav ol > li:first-child
+{
+	margin-left: 5px;
+}
+#nav > ul
+{
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	text-align: right;
+	float: right;
+}
+#nav > ul > li
+{
+	display: inline-block;
+	padding: 0 15px;
+}
+#nav > ul > li > a
+{
+	color: #fff;
+	text-decoration: none;
+	transition-duration: 250ms;
+}
+#nav > ul > li > a:hover
+{
+	color: #eee;
+}
+.sticky
+{
+	position: fixed;
+	top: 0;
+	left: 0;
+	background: rgba(20,30,40,0.4);
+	border-bottom: 1px solid rgba(20,30,40,0.1);
+	transition-duration: 600ms;
+}
+/* Inputs class */
+
+.loginbutton
+{
+	background: none;
+	border: 3px solid #51baa4;
+	color: #fff;
+	padding: 5px;
+	font-size: 20px;
+	width: 110px;
+	height: 40px;
+	border-radius: 20px;
+	line-height: 20px;
+	text-align: center;
+	font-family: Righteous, sans-serif;
+	transition-duration: 250ms;
+	cursor: pointer;
+}
+.loginbutton:hover
+{
+	background-color: #51baa4;
+}
+.loginbutton:focus
+{
+	background-color: #51baa4;
+}
+.bigbutton
+{
+	padding: 10px 20px;
+	font-size: 40px;
+	background: none;
+	border: 5px solid #51baa4;
+	border-radius: 40px;
+	color: #fff;
+	font-family: Righteous, sans-serif;
+	transition-duration: 250ms;
+}
+.bigbutton:hover
+{
+	background-color: #51baa4;
+	cursor: pointer;
+}
+.textbox
+{
+	background: none;
+	border: 3px solid #51baa4;
+	color: #fff;
+	padding: 5px;
+	font-size: 20px;
+	width: 100px;
+	height: 20px;
+	border-radius: 20px;
+	line-height: 20px;
+	text-align: center;
+	font-family: Righteous, sans-serif;
+	transition-duration: 250ms;
+}
+.textbox:focus
+{
+	background-color: #51baa4;
+}
+.textbox:hover
+{
+	background-color: #51baa4;
+}
+.bigtextbox
+{
+	background: none;
+	border: 3px solid #51baa4;
+	color: #fff;
+	padding: 5px;
+	font-size: 20px;
+	width: 200px;
+	height: 20px;
+	border-radius: 20px;
+	line-height: 20px;
+	text-align: center;
+	font-family: Righteous, sans-serif;
+	transition-duration: 250ms;
+}
+.bigtextbox:focus
+{
+	background-color: #51baa4;
+}
+.bigtextbox:hover
+{
+	background-color: #51baa4;
+}
+
+/* Global class */
+
+.hideme
+{
+    opacity:0;
+}
+
+/* ID = Container */
+
+#container
+{
+	width: 100%;
+	min-width: 1200px;
+	background: linear-gradient(rgba(81,186,164,1), rgba(81,186,164,0.5), rgba(81,186,164,1))
+}
+#offer
+{
+	width: 1000px;
+	margin: 0 auto;
+	padding-top: 50px;
+}
+.offer
+{
+	width: 250px;
+	height: 250px;
+	padding: 20px;
+	float: left;
+	margin: 0 5px;
+	text-align: center;
+	display: inline-block;
+}
+.offer:first-child
+{
+	margin-left: 50px;
+}
+.offer:nth-child(4)
+{
+	margin-left: 200px;
+}
+.offer > h1
+{
+	font-size: 30px;
+}
+.offer > i
+{
+	font-size: 40px;
+	line-height: 80px;
+	width: 80px;
+	height: 80px;
+	border: 3px solid #fff;
+	border-radius: 50%;
+	display: inline-block;
+}
+#about
+{
+	width: 1000px;
+	margin: 0 auto;
+	padding-top: 50px;
+}
+.about
+{
+	width: 900px;
+	height: 300px;
+	margin: 0 auto;
+	margin-top: 20px;
+}
+.about > i
+{
+	width: 294px;
+	height: 294px;
+	font-size: 200px;
+	line-height: 294px;
+	border: 3px solid #fff;
+	border-radius: 50%;
+	float: left;
+}
+.about > span
+{
+	width: 560px;
+	height: 260px;
+	padding: 20px;
+	float: left;
+	text-align: center;
+}
+.about > span > p > a
+{
+	text-decoration: none;
+	color: #fff;
+	font-size: 40px;
+}
+#contact
+{
+	border-top: 1px solid #fff;
+	width: 1000px;
+	margin: 40px auto 0 auto;
+	padding: 40px 0;
+	text-align: center;
+}
+#contact > h1
+{
+	font-size: 35px;
+}
+#contact > span
+{
+	display: inline-block;
+	padding: 20px;
+}
+#contact > span > a
+{
+	color: #fff;
+	text-decoration: none;
+}
+#contact > span > a > i
+{
+	font-size: 50px;
+}
+#footer
+{
+	background-color: #1e2832;
+	width: 100%;
+	height: 100px;
+	text-align: center;
+	line-height: 100px;
+}
+
+/* ID = register */
+
+#registerbutton
+{
+	width: 40px;
+	height: 40px;
+	padding: 10px;
+	border: 3px solid #fff;
+	border-radius: 40px;
+	font-size: 30px;
+	line-height: 40px;
+	position: fixed;
+	bottom: 20px;
+	left: 20px;
+	transition-duration: 250ms;
+}
+#registerbutton > a
+{
+	color: #fff;
+	display: block;
+}
+#registerbutton:hover
+{
+	border: 3px solid #51baa4;
+}
+#register
+{
+	width: 1000px;
+	margin: 0 auto;
+	padding: 40px 0;
+	text-align: center;
+}
+#register a
+{
+	color: #fff;
+}
+#register a:hover
+{
+	text-decoration: none;
+}
+.register
+{
+	width: 250px;
+	height: 250px;
+	padding: 20px;
+	float: left;
+	margin: 0 5px;
+	text-align: center;
+	display: inline-block;
+}
+.register:first-child
+{
+	margin-left: 50px;
+}
+.register:nth-child(4)
+{
+	margin-left: 50px;
+}
+.register > h1
+{
+	font-size: 30px;
+}
+.register > i
+{
+	font-size: 40px;
+	line-height: 80px;
+	width: 80px;
+	height: 80px;
+	border: 3px solid #51baa4;
+	border-radius: 50%;
+	display: inline-block;
+}

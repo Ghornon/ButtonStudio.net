@@ -1,0 +1,645 @@
+/*
+*	
+*	Roulette - Play 4-Fun! Free! by buttonstudio.pl
+*	Supported by:
+*		https://unsplash.com
+*		http://subtlepatterns.com
+*		http://fontello.com
+*		https://www.google.com/fonts
+*		https://jquery.com
+*/
+/*======================================*/
+/*					Body				*/
+/*======================================*/
+body
+{
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	min-width: 960px;
+	height: 100vh;
+	min-height: 480px;
+	font-size: 20px;
+	font-family: 'Righteous', cursive;
+	color: #fff;
+	background-color: #666;
+	background: url('../images/photo-1423589989400-cc0270157ed0.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+
+/*======================================*/
+/*					Header				*/
+/*======================================*/
+
+header
+{
+	width: 960px;
+	height: 200px;
+	position: relative;
+	text-align: center;
+	margin: 0 auto;
+}
+
+header > span
+{
+	font-size: 60px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translateY(-50%) translateX(-50%);
+	color: #22313f;
+	font-weight: bold;
+	text-shadow:
+	2px 2px 0 #fff,
+	-2px 2px 0 #fff,
+	-2px -2px 0 #fff,
+	2px -2px 0 #fff;
+}
+
+header > span > p
+{
+	font-size: 20px;
+	margin: 0;
+	padding: 0;
+	color: #44535f;
+	text-shadow:
+	1px 1px 0 #fff,
+	-1px 1px 0 #fff,
+	-1px -1px 0 #fff,
+	1px -1px 0 #fff;
+}
+
+header label
+{
+	position: absolute;
+	top: 50%;
+	transform: translateX(-50%);
+	cursor: pointer;
+	width: 60px;
+	height: 60px;
+	transition-duration: 250ms;
+}
+
+header label:hover
+{
+	text-shadow: 0px 0px 10px #000;
+}
+
+header label[for=btn-nav]
+{
+	left: 100px;
+}
+
+header label[for=btn-login]
+{
+	right: 48px;
+}
+
+header i
+{
+	font-size: 40px;
+}
+
+/*======================================*/
+/*				Buttons					*/
+/*======================================*/
+
+#btn-nav
+{
+	display: none;
+}
+
+#btn-nav:checked ~ nav
+{
+	margin: 0;
+}
+
+#login label, nav label
+{
+	position: absolute;
+	top: 20px;
+	transition-duration: 250ms;
+	cursor: pointer;
+	font-size: 30px;
+}
+
+#login label:hover,  nav label:hover
+{
+	color: #000;
+}
+
+nav label
+{
+	right: 20px;
+}
+
+#login label
+{
+	left: 20px;
+}
+
+#btn-login
+{
+	display: none;
+}
+
+#btn-login:checked ~ #login
+{
+	margin: 0;
+}
+
+/*======================================*/
+/*					Nav					*/
+/*======================================*/
+
+nav
+{
+	width: 300px;
+	height: 100vh;
+	top: 0;
+	left: 0;
+	position: fixed;
+	background-color: #3598dc;
+	text-align: center;
+	z-index: 100;
+	margin-left: -100%;
+	transition-duration: 500ms;
+	-webkit-box-shadow: 0px 0px 51px 5px rgba(0,0,0,0.7);
+	-moz-box-shadow: 0px 0px 51px 5px rgba(0,0,0,0.7);
+	box-shadow: 0px 0px 51px 5px rgba(0,0,0,0.7);
+}
+
+nav > ul
+{
+	list-style-type: none;
+	width: 80%;
+	margin: 0;
+	padding: 0;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translateX(-50%) translateY(-50%);
+}
+
+nav > ul > li
+{
+	border-top: 1px solid #fff;
+}
+
+nav > ul > li:first-child
+{
+	border: none;
+}
+
+nav > ul > li > a
+{
+	color: #fff;
+	text-decoration: none;
+	display: block;
+	padding: 20px 20px;
+	transition-duration: 250ms;
+}
+
+nav > ul > li > a:hover
+{
+	color: #22313f;
+}
+
+/*======================================*/
+/*				#login					*/
+/*======================================*/
+
+#login
+{
+	width: 300px;
+	height: 100vh;
+	top: 0;
+	right: 0px;
+	position: fixed;
+	background-color: #3598dc;
+	text-align: center;
+	z-index: 100;
+	margin-right: -100%;
+	transition-duration: 500ms;
+	text-align: center;
+	-webkit-box-shadow: 0px 0px 51px 5px rgba(0,0,0,0.7);
+	-moz-box-shadow: 0px 0px 51px 5px rgba(0,0,0,0.7);
+	box-shadow: 0px 0px 51px 5px rgba(0,0,0,0.7);
+}
+
+#login > form
+{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translateX(-50%) translateY(-50%);
+	display: flex;
+    flex-direction: column;
+}
+
+#login > form > a
+{
+	text-decoration: none;
+	color: #fff;
+	transition-duration: 250ms;
+	margin: 3px 0;
+}
+
+#login > form > a:hover
+{
+	text-shadow:
+	1px 1px 5px #000,
+	-1px 1px 5px #000,
+	-1px -1px 5px #000,
+	1px -1px 5px #000;
+}
+
+/*======================================*/
+/*				Inputs					*/
+/*======================================*/
+
+.textbox
+{
+	width: 200px;
+	height: 30px;
+	font-size: 20px;
+	outline: none;
+	font-family: 'Righteous', cursive;
+	text-align: center;
+	border: 1px solid #eee;
+	border-radius: 1px;
+	color: #22313f;
+	box-sizing: border-box;
+	margin: 10px 0;
+	transition-duration: 250ms;
+	-webkit-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+	-moz-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+	box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+}
+
+.textbox:hover, .textbox:active, .textbox:focus
+{
+	border: 1px solid #000;	
+}
+
+.button
+{
+	width: 200px;
+	height: 30px;
+	font-size: 20px;
+	outline: none;
+	font-family: 'Righteous', cursive;
+	text-align: center;
+	border: 1px solid #25a02b;
+	border-radius: 1px;
+	color: #fff;
+	color: #fff;
+	background-color: #36b03c;
+	margin: 10px 0;
+	cursor: pointer;
+	transition-duration: 250ms;
+	-webkit-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+	-moz-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+	box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+}
+
+.button:hover
+{
+	background-color: #30bf37;
+}
+
+/*======================================*/
+/*				Section					*/
+/*======================================*/
+
+section
+{
+	width: 960px;
+	margin: 0 auto;
+	clear: both;
+}
+
+article
+{
+	padding: 50px 0;
+	clear: both;
+}
+
+/*======================================*/
+/*				.widget-thumb			*/
+/*======================================*/
+
+.widget-thumb
+{
+	width: 200px;
+	height: 100px;
+	padding: 10px;
+	background-color: #fff;
+	float: left;
+	margin-left: 26px;
+	color: #666;
+	text-align: center;
+	position: relative;
+}
+
+.widget-thumb:first-child
+{
+	margin-left: 0;
+}
+
+.widget-thumb:nth-child(2)
+{
+	margin-right: 2px;
+}
+
+.widget-thumb > i
+{
+	width: 50px;
+	height: 50px;
+	margin: 25px;
+	display: block;
+	line-height: 50px;
+	font-size: 30px;
+	color: #fff;
+}
+
+.widget-thumb > span
+{
+	position: absolute;
+	top: 50%;
+	right: 10px;
+	transform: translateY(-50%);
+	display: block;
+	width: 110px;
+	font-size: 12px;
+	text-transform: uppercase;
+}
+
+.widget-thumb > span > p
+{
+	font-size: 30px;
+	margin: 0;
+	padding: 0;
+}
+
+/*======================================*/
+/*				.widget-mid				*/
+/*======================================*/
+
+.widget-mid
+{
+	width: 280px;
+	height: 60px;
+	padding: 20px;
+	background-color: #22313f;
+	float: left;
+	font-size: 22px;
+	line-height: 60px;
+	text-align: center;
+}
+
+.widget-mid > i
+{
+	width: 60px;
+	height: 60px;
+	display: block;
+	float: left;
+	margin-right: 20px;
+	line-height: 60px;
+	font-size: 30px;
+	color: #fff;
+}
+
+.widget-mid:first-child
+{
+	background-color: #e87e04;
+}
+
+.widget-mid:nth-child(2)
+{
+	background-color: #e43a45;
+}
+
+.widget-mid:nth-child(4)
+{
+	width: 920px;
+	background-color: #3598dc;
+	font-size: 20px;
+	line-height: 20px;
+}
+
+/*======================================*/
+/*				.widget-news			*/
+/*======================================*/
+
+.widget-news
+{
+	width: 430px;
+	height: 430px;
+	padding: 20px;
+	background-color: #3598dc;
+	float: left;
+	text-align: center;
+	overflow: hidden;
+	position: relative;
+}
+
+.widget-news > h1
+{
+	margin: 0;
+	padding: 10px 0;
+	font-size: 30px;
+	line-height: 30px;
+}
+
+.news
+{
+	width: 410px;
+	padding: 10px;
+	margin-top: 10px;
+	font-size: 16px;
+	text-align: justify;
+	border-top: 1px dotted #fff;
+}
+
+.news:nth-child(2)
+{
+	border: none;
+}
+
+/*======================================*/
+/*				.widget-social			*/
+/*======================================*/
+
+.widget-social
+{
+	width: 470px;
+	float: right;
+	text-align: center;
+}
+
+.widget-social > a
+{
+	display: block;
+	width: 110px;
+	height: 110px;
+	line-height: 110px;
+	font-size: 40px;
+	background-color: #d95333;
+	text-decoration: none;
+	color: #fff;
+	float: left;
+	margin-left: 10px;
+}
+
+.widget-social > a:hover
+{
+	background-color: #c94222;
+	text-shadow: 0 0 20px #000;
+}
+
+.widget-social > a:first-child
+{
+	background-color: #3b5997;
+	margin-left: 0;
+}
+
+.widget-social > a:first-child:hover
+{
+	background-color: #2a4886;
+}
+
+.widget-social > a:nth-child(2)
+{
+	background-color: #ee1c1b;
+}
+
+.widget-social > a:nth-child(2):hover
+{
+	background-color: #dd0b0a;
+}
+
+.widget-social > a:nth-child(3)
+{
+	background-color: #36b9ff;
+}
+
+.widget-social > a:nth-child(3):hover
+{
+	background-color: #25a8ee;
+}
+
+.widget-social > h1
+{
+	width: 100%;
+	height: 110px;
+	display: block;
+	margin: 0;
+	padding: 0;
+	clear: both;
+	line-height: 110px;
+	background-color: #3598dc;
+}
+
+.widget-social > p
+{
+	width: 100%;
+	height: 250px;
+	line-height: 250px;
+	font-size: 60px;
+	margin: 0;
+	padding: 0;
+}
+
+/*======================================*/
+/*				Footer					*/
+/*======================================*/
+
+footer
+{
+	width: 100%;
+	height: 200px;
+	line-height: 200px;
+	font-size: 30px;
+	text-align: center;
+	clear: both;
+}
+
+/*======================================*/
+/*				#timerRu					*/
+/*======================================*/
+
+#timerRu
+{
+	width: 480px;
+	height: 480px;
+	float: left;
+	outline: 1px dashed #fff;
+}
+
+#timerRu span
+{
+	border: 10px dotted #fff;
+	border-radius: 100%;
+	display: block;
+	width: 360px;
+	height: 360px;
+	margin: 10px auto;
+	position: relative;
+}
+
+#timerRu i
+{
+	width: 360px;
+	height: 360px;
+	font-style: normal;
+	text-align: center;
+	line-height: 360px;
+	font-size: 40px;
+	display: block;
+	z-index: 100;
+	text-shadow:
+	1px 1px 0 #000,
+	-1px 1px 0 #000,
+	-1px -1px 0 #000,
+	1px -1px 0 #000;
+}
+
+#timerRu span p
+{
+	width: 4px;
+	height: 350px;
+	border-radius: 2px;
+	background: linear-gradient(rgba(255,255,255,1), rgba(255,255,255,0),rgba(255,255,255,0), rgba(255,255,255,0));
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+	z-index: 1;
+}
+
+#timerRu .timerRu
+{
+	-webkit-animation-name: 'timerRu';
+			animation-name: 'timerRu';
+	-webkit-animation-duration: 60s;
+			animation-duration: 60s;
+}
+
+@-webkit-keyframes timerRu
+{
+	from{
+		-webkit-transform: rotate(0);
+		transform: rotate(0);}
+	to{
+		-webkit-transform: rotate(360deg);
+		transform: rotate(360deg);
+	}
+}
+
+
+
