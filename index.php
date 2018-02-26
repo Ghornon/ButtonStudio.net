@@ -25,7 +25,7 @@ if(!isset($_GET['lang'])) {
 
 }
 
-require_once 'statistics/entrance.php';
+//require_once 'statistics/entrance.php';
 
 ?>
 <!DOCTYPE html>
@@ -40,6 +40,8 @@ require_once 'statistics/entrance.php';
 
     <meta name="keywords" content="button, studio, net, web, programer, designer, front-end, developer">
     <meta name="description" content="ButtonStudio.net - Designer, front-end developer">
+    
+    <meta property="og:image" content="images/ogimage.jpg" />
 
     <!-- Text/css -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -47,6 +49,7 @@ require_once 'statistics/entrance.php';
     <link href="css/style.css" type="text/css" rel="stylesheet">
     <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
     <link rel="shortcut icon" type="image/png" href="images/favicon.png">
+    
     
     <!-- Title -->
     <title>ButtonStudio.net</title>
@@ -115,7 +118,7 @@ require_once 'statistics/entrance.php';
                           
                     <?php } else { ?>
                        
-                        <p>var Cześć = function() {</p>
+                        <p>var Hi = function() {</p>
                         <p class="tab">Jestem Szymon</p>
                         <p class="tab">Front-end developer</p>
                         <p>};</p> 
@@ -145,7 +148,7 @@ require_once 'statistics/entrance.php';
                         <header class="header">
 
                             <div class="icon">
-                                <i class="fa fa-pencil" aria-hidden="true"></i>
+                                <i class="fa fa-user-secret" aria-hidden="true"></i>
                             </div>
 
                             <?php if ($lang != "pl") { ?>
@@ -165,20 +168,20 @@ require_once 'statistics/entrance.php';
                         <?php if ($lang != "pl") { ?>
 
                             <p class="content">
-                                My name is Szymon, I'm a student middle school.<br> 
-                                Overtime I'm design user interfaces (UIs) and front-end developer.<br>
+                                My name is Szymon, I'm a student upper secondary school.<br> 
+                                Besides, I'm designer of user interfaces (UIs) and front-end developer.<br>
                                 <br>
-                                Programming and creating websites is my passion and always try to make a high quality website.<br>
-                                Despite my young age and a little experience, I can offer skills and passion for creating websites.
+                                Programming and creating websites are my passion and always try to make a high quality website.<br>
+                                Despite my young age and little experience, I could surprise you of my skills and passion.
                             </p>
 
                         <?php } else { ?>
 
                             <p class="content">
                                 Nazywam się Szymon i jestem uczniem technikum.<br> 
-                                Po godzinach zajmuje się projektowaniem i programowanie stron internetowych.<br>
+                                Poza tym zajmuje się projektowaniem oraz tworzeniem stron internetowych.<br>
                                 <br>
-                                Tworzenie witryn internetowych jest moją pasją dlatego też zawsze staram się tworzyć strony na wysokim poziomie. Pomimo mojego młodego wieku i niewielkiego doświadczenie, mogę zaoferować umiejętności i pasje z zakresu front-end'u.
+                                Tworzenie witryn internetowych jest moją pasją dlatego też zawsze staram się tworzyć strony na wysokim poziomie. Pomimo mojego młodego wieku i niewielkiego doświadczenie, mogę zaskoczyć cię moimi umiejętnościami i pasją.
                             </p>
 
                         <?php } ?>
@@ -269,7 +272,7 @@ require_once 'statistics/entrance.php';
                         <header class="header">
 
                             <div class="icon">
-                                <i class="fa fa-pencil" aria-hidden="true"></i>
+                                <i class="fa fa-briefcase" aria-hidden="true"></i>
                             </div>
 
                             <?php if ($lang != "pl") { ?>
@@ -289,15 +292,15 @@ require_once 'statistics/entrance.php';
                         <?php if ($lang != "pl") { ?>
 
                             <p class="content">
-                                I design and develop websites from front-end. I make website user interface starting from the drawing on the sheet and finishing on the finished website.<br>
+                                I design and create visual forms of websites (front-end). I make a website user interface starting from the drawing on the sheet and finishing on the full functionality website.<br>
                                 <br>
-                                The websites using the latest technology, so that every project what I made was perfectly presented to the highest standards like W3C.
+                                The websites, which I do use the latest technology, so that every project what I made was perfectly presented to the highest standards like W3C.
                             </p>
 
                             <?php } else { ?>
 
                             <p class="content">
-                                Projektuje i wykonuje strony internetowe od strony wizualnej. Tworzę interfejsy użytkownika zaczynając od rysunku na kartce papieru, kończąc na w pełni funkcjonalnej stronie www.<br>
+                                Projektuje i wykonuje strony internetowe od strony wizualnej (front-end). Tworzę interfejsy użytkownika zaczynając od rysunku na kartce papieru, kończąc na w pełni funkcjonalnej stronie www.<br>
                                 <br>
                                 Strony wykonane przeze mnie wykorzystują najnowsze technologie dlatego też każdy projekt jest dostosowany do najwyższych standardów takich jak W3C.
                             </p>
@@ -338,7 +341,7 @@ require_once 'statistics/entrance.php';
 
             <div class="row">
 
-                <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
 
                     <article class="image">
 
@@ -372,7 +375,7 @@ require_once 'statistics/entrance.php';
                 </div>
 
 
-                <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
 
                     <article class="image">
 
@@ -405,7 +408,7 @@ require_once 'statistics/entrance.php';
 
                 </div>
 
-                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
 
                     <article class="about">
 
@@ -418,7 +421,7 @@ require_once 'statistics/entrance.php';
                             <?php if ($lang != "pl") { ?>
 
                                 <h6>Portfolio</h6>
-                                <h4 class="typing">My porjects</h4>
+                                <h4 class="typing">My projects</h4>
 
                             <?php } else { ?>
 
@@ -453,7 +456,7 @@ require_once 'statistics/entrance.php';
 
             <div class="row">
 
-                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
 
                     <article class="quote">
 
@@ -475,7 +478,7 @@ require_once 'statistics/entrance.php';
 
                         <?php } else { ?>
 
-                            <p class="content">Kreatywność to po prostu łączenie rzeczy. Kiedy pytasz kreatywnych ludzi, jak oni coś zrobili, czują się trochę winni, ponieważ tak naprawdę nie zrobili tego, po prostu coś zobaczyli. Po pewnym czasie wydawało im się to oczywiste. To dlatego, że potrafili połączyć doświadczenia, które mieli, i syntetyzować nowe rzeczy.</p>
+                            <p class="content">Kreatywność to po prostu łączenie rzeczy. Kiedy pytasz kreatywnych ludzi, jak oni coś zrobili, czują się trochę winni, ponieważ tak naprawdę nie zrobili tego, po prostu coś zobaczyli. Po pewnym czasie wydawało im się to oczywiste. To dlatego, że potrafili połączyć doświadczenia, które mieli i syntetyzować nowe rzeczy.</p>
 
                             <footer class="footer">
                                 <h6>Steve Jobs</h6>
@@ -487,7 +490,7 @@ require_once 'statistics/entrance.php';
 
                 </div>
 
-                <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
 
                     <article class="image">
 
@@ -520,13 +523,13 @@ require_once 'statistics/entrance.php';
 
                 </div>
 
-                <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
 
                     <article class="image">
 
                         <header class="header">
 
-                            <img src="images/portfolio_4.png" alt="Page 2">
+                            <img src="images/portfolio_4.jpg" alt="Page 4">
                             <div class="icon">
                                 <i class="fa fa-thumb-tack" aria-hidden="true"></i>
                             </div>
@@ -576,7 +579,7 @@ require_once 'statistics/entrance.php';
                         
                         <?php if ($lang != "pl") { ?>
                         
-                            <p>A brand is only as successfulas its implementation, great products should not be defined by design alone, but also by functionality and great user experience. Developers need to strive for clean, elegant and efficient code to assure long-term sustainability and keep software's maintainability.</p>
+                            <p>A brand is only as successful as it's implementation, great products should not be defined by design alone, but also by functionality and great user experience. Developers need to strive for clean, elegant and efficient code to assure long-term sustainability and keep software's maintainability.</p>
                         
                         <?php } else { ?>
                         
@@ -601,7 +604,7 @@ require_once 'statistics/entrance.php';
                         
                         <?php } else { ?>
                         
-                            <p>Projektowanie jest wyzwaniem dla ludzkiej kreatywności. Zadaniem designer'a nie jest tylko stworzeniem rysunku czy też szablonu strony internetowej, ale przwidzenie wymagań rynku i klienta tak aby stworzyć między nim spójną całość. Zaprojektowanie czegoś co ma być effektywne i przyjazne dla oka jest nielada wyzwaniem.</p>
+                            <p>Projektowanie jest wyzwaniem dla ludzkiej kreatywności. Zadaniem designer'a nie jest tylko stworzeniem rysunku czy też szablonu strony internetowej, ale przewidzenie wymagań rynku i klienta tak aby stworzyć między nim spójną całość. Zaprojektowanie czegoś co ma być efektywne i przyjazne dla oka jest nie lada wyzwaniem.</p>
                         
                         <?php } ?>
                         

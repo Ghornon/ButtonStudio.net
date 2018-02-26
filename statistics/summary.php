@@ -84,7 +84,7 @@ require_once 'show.php';
                    
             <div class="banner">
                 
-                <div class="content">
+                <div  class="content">
                        
                     <p>var Hi = function() {</p>
                     <p class="tab">Hello <?php echo $_SESSION['login']; ?></p>
@@ -121,7 +121,7 @@ require_once 'show.php';
                             
                         </header>
                         
-                        <div class="content">
+                        <div  class="content" style="width: 100%;">
                             
                             <?php 
                                 
@@ -150,7 +150,7 @@ require_once 'show.php';
                             
                         </header>
                         
-                        <div class="content">
+                        <div  class="content" style="width: 100%;">
                             
                             <?php 
                                 
@@ -179,7 +179,7 @@ require_once 'show.php';
                             
                         </header>
                         
-                        <div class="content">
+                        <div  class="content" style="width: 100%;">
                             
                             <?php 
                                 

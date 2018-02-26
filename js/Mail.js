@@ -35,7 +35,7 @@ var mail = (function(){
         
     };
     
-    var sendRequest = function (name, email, subject, message, quiet = false) {
+    var sendRequest = function (name, email, subject, message, quiet) {
         
         $.post("mail.php?lang=" + lang + "&quiet=" + quiet, { 
 
@@ -77,7 +77,7 @@ var mail = (function(){
 
             console.log(name + " " + email + " " + subject + " " + message);
 
-            sendRequest(name, email, subject, message);
+            sendRequest(name, email, subject, message, false);
             
         } else {
 

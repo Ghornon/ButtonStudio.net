@@ -27,16 +27,29 @@ function show( $period ) {
 
                 if ($query->num_rows > 0) {
                         
-                    echo '<table class="table table-striped table-hover">';
-                    echo "<thead><tr><th>ID</th><th>Date</th><th>Time</th><th>IP address</th><th>Language</th></thead>";
+                    echo '<div class="table-responsive"><table class="table table-striped table-hover">';
+                    echo "<thead><tr><th>ID</th><th>ID in database </th><th>Date</th><th>Time</th><th>IP address</th><th>Language</th></thead>";
+                    
+                    $a = 1;
+                    
+                    while($row = $query->fetch_array()) {
 
-                    while($row = $query->fetch_assoc()) {
-
-                        echo "<tr><th>" . $row['id'] . "</th><th>" . $row['date'] . "</th><th>" . $row['time'] . "</th><th>" . $row['ip'] . "</th><th>" . $row['language'] . "</th></tr>";
+//                        echo "<tr><th>" . $row['id'] . "</th><th>" . $row['date'] . "</th><th>" . $row['time'] . "</th><th>" . $row['ip'] . "</th><th>" . $row['language'] . "</th></tr>";
+//                        print_r($row);
+                        
+                        echo "<tr><td>" . $a++ . "</td>";
+                        
+                        for ( $i = 0; $i < count($row) / 2; $i++ ) {
+                            
+                            echo "<td>" . $row[ $i ] . "</td>";
+                            
+                        }
+                        
+                        echo "</tr>";
 
                     }
 
-                    echo "</table>";
+                    echo "</table></div>";
 
 
                 }

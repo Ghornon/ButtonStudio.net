@@ -34,8 +34,9 @@ detectLanguage = function () {
     
     $('.switch').children('a').remove();
 
-    var switcher = 'EN <label class="slider" for="lang"></label> PL';
-    $('.switch').append(switcher);
+    var switcher = $('<label>').addClass('slider').attr('for', 'lang');;
+    
+    $('.switch').append("EN ", switcher, " PL");
 
     if (lang == "pl") {
         $('#lang').prop('checked', true);
