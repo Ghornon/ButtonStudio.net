@@ -4,7 +4,7 @@ var throttle,
     detectLanguage;
     
 throttle = function (callback, limit) {
-
+    
     var wait = false;
     return function () {
         if (!wait) {

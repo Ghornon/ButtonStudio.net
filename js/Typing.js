@@ -1,60 +1,68 @@
-var typing = (function(){
-    
-    var $items = $('.typing'),
-        content = [];
+'use strict';
 
-    $items.each(function () {
+class Typing {
 
-        content.push($(this).text());
-        $(this).text("");
+    constructor(target = 'typing', endClass = 'typed') {
 
-    });
+        this.content = [];
+        this.$items = $(`.${target}`);
+        this.endClass = endClass;
 
-    var startTyping = function (str, obj) {
+        this.$items.each((index, element) => {
 
-        allowAnimation = false;
+            this.content.push($(element).text());
+            $(element).text("");
 
-        var currentIndex = 0;
+        });
 
-        var interval = setInterval(function () {
+    }
+
+    _startTyping(str, obj) {
+
+        let currentIndex = 0;
+
+        const interval = setInterval(() => {
 
             if (str.length > currentIndex) {
+
                 obj.text(obj.text() + str[currentIndex]);
                 currentIndex++;
+
             } else {
+
                 clearInterval(interval);
+
             }
 
         }, 160);
 
-    };
+    }
 
-    var playAnimation = function () {
+    playAnimation() {
 
-        $items.each(function (index) {
+        this.$items.each((index, element) => {
 
-            var topOfDiv = $(this).offset().top,
-                bottomOfWindow = $(window).scrollTop() + $(window).height() - ($(window).height() / 5);
+            if (!$(element).hasClass(this.endClass)) {
 
-            if (bottomOfWindow >= topOfDiv && !$(this).hasClass('typed')) {
-                startTyping(content[index], $(this));
-                $(this).addClass('typed');
+                const topOfDiv = $(element).offset().top;
+                const bottomOfWindow = $(window).scrollTop() + $(window).height() - ($(window).height() / 5);
 
-            }    
+                if (bottomOfWindow >= topOfDiv) {
+
+                    this._startTyping(this.content[index], $(element));
+                    $(element).addClass(this.endClass);
+
+                }
+
+            }
 
         });
 
-    }; 
-    
-    var eventListener = (function () {
-      
-        $(document).on('scroll', throttle(playAnimation, 200));
-        
-    })();
-    
-    return {
-        $items: $items,
-        content: content
     }
-    
-})();
+
+}
+
+const typing = new Typing();
+
+//Event Listener
+$(window).scroll(() => throttle(typing.playAnimation(), 200));
