@@ -105,7 +105,7 @@ function respond( $type, $mute, $lang ) {
     
 //Main
 
-/*if ( check() ) {
+if ( check() ) {
 
     $headers  = 'MIME-Version: 1.0' . "\r\n";
     $headers .= 'Content-type: text/html; charset=utf-8' . "<br>";
@@ -128,8 +128,8 @@ function respond( $type, $mute, $lang ) {
 
     respond(false, $ajax, $lang);
 
-}*/
+}
 
-respond(false, $ajax, $lang);
+//respond(false, $ajax, $lang);
 
 ?>
