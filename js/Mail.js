@@ -65,19 +65,14 @@ class Mail {
             
             const respond = JSON.parse(data);
             
-            console.log(respond);
-            console.log(respond.status); 
-            
             if (respond.status) {
 
                 objectThis.$mail.contact.trigger('reset');
                 objectThis._respond(true);
-                console.log("ok");
 
             } else {
 
                 objectThis._respond(false);
-                console.log("blad");
 
             }
 
