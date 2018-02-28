@@ -4,7 +4,7 @@ class Mail {
 
     constructor(mail, modal) {
 
-        this.lang = lang;
+        this.lang = detectLanguage();
 
         this.$mail = {
             contact: $(mail.contactFormSelector),
