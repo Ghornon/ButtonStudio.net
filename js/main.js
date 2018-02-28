@@ -1,11 +1,8 @@
-var throttle,
-    preloader,
-    lang,
-    detectLanguage;
+'use strict';
+
+const throttle = (callback, limit) => {
     
-throttle = function (callback, limit) {
-    
-    var wait = false;
+    let wait = false;
     return function () {
         if (!wait) {
             callback();
@@ -18,36 +15,40 @@ throttle = function (callback, limit) {
 
 };
 
-preloader = function () {
+const preloader = () => {
 
     $('body').addClass('loaded');
     console.log('Page loaded');
 
 };
 
-detectLanguage = function () {
+const detectLanguage = () => {
+    
+    let lang = "en";
     
     if (window.location.href.indexOf('lang=pl') != -1)
         lang = "pl";
-    else
-        lang = "en";
     
-    $('.switch').children('a').remove();
-
-    var switcher = $('<label>').addClass('slider').attr('for', 'lang');;
-    
-    $('.switch').append("EN ", switcher, " PL");
-
-    if (lang == "pl") {
-        $('#lang').prop('checked', true);
-    }
+    return lang;
 
 };
 
-$(document).ready(function () {
+const createSwitcher = () => {
     
-    preloader();
-    detectLanguage();
+    const lang = detectLanguage();
+    
+    $('.switch').children('a').remove();
+
+    const switcher = $('<label>').addClass('slider').attr('for', 'lang');
+    
+    $('.switch').append("EN ", switcher, " PL");
+
+    if (lang == "pl")
+        $('#lang').prop('checked', true);
+     
+};
+
+const eventListener = () => {
     
     $('.scrollTo').on('click', function (event) {
         
@@ -65,12 +66,10 @@ $(document).ready(function () {
     $('#lang').on('click', function () {
 
         if ($(this).is(':checked')) {
-            console.log("Change language to Polish");
             setTimeout(function () {
                 window.location.href = '?lang=pl';
             }, 400);
         } else {
-            console.log("Change language to English");
             setTimeout(function () {
                 window.location.href = '?lang=en';
             }, 400);
@@ -91,5 +90,15 @@ $(document).ready(function () {
         });
 
     });
+    
+    
+    
+}
+
+$(document).ready(() => {
+    
+    preloader();
+    createSwitcher();
+    eventListener();
     
 });
