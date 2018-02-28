@@ -22,15 +22,15 @@ if (isset($_GET['lang'])) {
     $lang = "en";
 }
 
-if (isset($_GET['quiet'])) {
+if (isset($_GET['ajax'])) {
 
-    if ($_GET['quiet'])
-        $quiet = true;
-    else
-        $quiet = false; 
+    if ($_GET['ajax'])
+        $ajax = true;
+    else 
+        $ajax = false;
 
 } else {
-    $quiet = false;
+    $ajax = false;
 }
 
 //Functions
@@ -77,9 +77,9 @@ function respond( $type, $mute, $lang ) {
     if ( $mute ) {
 
         if ( $type )
-            echo "true";
+            echo json_encode( array( "status" => true ) );
         else
-            echo "false";
+            echo json_encode( array( "status" => false ) );
 
     } else {
 
@@ -101,11 +101,11 @@ function respond( $type, $mute, $lang ) {
 
     }
          
-    }
+}
     
 //Main
 
-if ( check() ) {
+/*if ( check() ) {
 
     $headers  = 'MIME-Version: 1.0' . "\r\n";
     $headers .= 'Content-type: text/html; charset=utf-8' . "<br>";
@@ -115,21 +115,21 @@ if ( check() ) {
 
     if( @mail('contact@buttonstudio.net', $subject, $message, $headers) ) {
 
-        respond(true, $quiet, $lang);
+        respond(true, $ajax, $lang);
 
     } else {
 
-        respond(false, $quiet, $lang);
+        respond(false, $ajax, $lang);
 
     }
 
 
 } else {
 
-    respond(false, $quiet, $lang);
+    respond(false, $ajax, $lang);
 
-}
+}*/
 
-//respond(true, $quiet, $lang);
+respond(false, $ajax, $lang);
 
 ?>

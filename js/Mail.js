@@ -1,43 +1,60 @@
-var mail = (function(){
-    
-    var respond = function (type, lang) {
-        
-        var message = "",
-            title = "",
-            $modal = $("#modal-dialog");
-        
-        if (lang != "pl") {
+'use strict';
 
-            if (type)
-                message = "Message sent correctly!";
-            else
-                message = "Message didn't send correctly! Something went wrong!";
-            
-            title = "Message status";
+class Mail {
+
+    constructor(mail, modal) {
+
+        this.lang = lang;
+
+        this.$mail = {
+            contact: $(mail.contactFormSelector),
+            name: $(mail.nameInputSelector),
+            email: $(mail.emialInputSelector),
+            subject: $(mail.subjectInputSelector),
+            message: $(mail.messageInputSelector)
+        };
+
+        this.$modal = {
+            form: $(modal.modalFormSelector),
+            title: $(modal.modalTitleSelector),
+            body: $(modal.modalBodySelector)
+        };
+
+    }
+
+    _validate() {
+
+        const name = this.$mail.name.val();
+        const email = this.$mail.email.val();
+        const subject = this.$mail.subject.val();
+        const message = this.$mail.message.val();
+
+        const validateEmail = (email) => {
+
+            const regex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+            return regex.test(email);
+
+        }
+
+        if (name.length > 3 && subject.length > 3 && validateEmail(email) && message.length > 10) {
+
+            console.log(name + "\n" + email + "\n" + subject + "\n" + message);
+
+            this.request(name, email, subject, message);
 
         } else {
 
-            if (type)
-                message = "Wiadomość została wysłana poprawnie!";
-            else
-                message = "Wiadomość nie została wysłana poprawnie! Coś poszło nie tak!";
-            
-            title = "Status wiadomości";
+            this._respond(false);
 
         }
-        
-        $modal.find(".modal-title").text(title);
-        $modal.find(".modal-body").text(message);
-        
-        $modal.modal({show: true});
-        
-        console.log("Message status: " + message);
-        
-    };
+
+    }
     
-    var sendRequest = function (name, email, subject, message, quiet) {
+    request(name, email, subject, message, ajax = true) {
         
-        $.post("mail.php?lang=" + lang + "&quiet=" + quiet, { 
+        const objectThis = this;
+        
+        $.post(`mail.php?lang=${lang}&ajax=${ajax}`, {
 
             name: name,
             email: email,
@@ -45,54 +62,90 @@ var mail = (function(){
             message: message
 
         }, function (data) {
+            
+            const respond = JSON.parse(data);
+            
+            console.log(respond);
+            console.log(respond.status); 
+            
+            if (respond.status) {
 
-            if (data == "true") {
-
-                $(".contact").trigger('reset');
-                respond(true, lang);
+                objectThis.$mail.contact.trigger('reset');
+                objectThis._respond(true);
+                console.log("ok");
 
             } else {
 
-                respond(false, lang);
+                objectThis._respond(false);
+                console.log("blad");
 
             }
 
         });
 
-    };
-    
-    var validateEmail = function (email) {
-        var regex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-        return regex.test(email);
-    };
-    
-    var validation = function () {
-        
-        var name = $('#name').val(),
-            email = $('#email').val(),
-            subject = $('#subject').val(),
-            message = $('#message').val();
+    }
 
-        if (name.length > 3 && subject.length > 3 && validateEmail(email) && message.length > 10) {
+    _respond(correct = false) {
 
-            console.log(name + " " + email + " " + subject + " " + message);
+        let message = "";
+        let title = "";
 
-            sendRequest(name, email, subject, message, false);
-            
+        if (this.lang != "pl") {
+
+            if (correct)
+                message = "Message sent correctly!";
+            else
+                message = "Message didn't send correctly! Something went wrong!";
+
+            title = "Message status";
+
+            console.log("Message status:\n" + message);
+
         } else {
 
-            respond(false, lang);
+            if (correct)
+                message = "Wiadomość została wysłana poprawnie!";
+            else
+                message = "Wiadomość nie została wysłana poprawnie! Coś poszło nie tak!";
+
+            title = "Status wiadomości";
+
+            console.log("Status wiadomości:\n" + message);
 
         }
 
-        event.preventDefault();
-        
-    };
-    
-    $('#send').on('click', validation);
-    
-    return {
-        sendRequest: sendRequest
+        const $form = this.$modal.form;
+        const $title = this.$modal.title;
+        const $body = this.$modal.body;
+
+        $form.find($title).text(title);
+        $form.find($body).text(message);
+
+        $form.modal({
+            show: true
+        });
+
     }
-    
-})();
+
+    send() {
+        this._validate();
+    }
+
+}
+
+const mail = new Mail({
+    contactFormSelector: '.contact',
+    nameInputSelector: '#name',
+    emialInputSelector: '#email',
+    subjectInputSelector: '#subject',
+    messageInputSelector: '#message'
+}, {
+    modalFormSelector: '#modal-dialog',
+    modalTitleSelector: '.modal-title',
+    modalBodySelector: '.modal-body'
+});
+
+$('#send').on('click', (event) => {
+    mail.send();
+    event.preventDefault(event);
+});
