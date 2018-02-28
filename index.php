@@ -25,7 +25,7 @@ if(!isset($_GET['lang'])) {
 
 }
 
-//require_once 'statistics/entrance.php';
+require_once 'statistics/entrance.php';
 
 ?>
 <!DOCTYPE html>
