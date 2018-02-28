@@ -101,7 +101,7 @@ function respond( $type, $mute, $lang ) {
 
     }
          
-    }
+}
     
 //Main
 
