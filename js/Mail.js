@@ -2,33 +2,28 @@
 
 class Mail {
 
-    constructor(mail, modal) {
+    constructor(mailForm, modal) {
 
         this.lang = detectLanguage();
 
         this.$mail = {
-            contact: $(mail.contactFormSelector),
-            name: $(mail.nameInputSelector),
-            email: $(mail.emialInputSelector),
-            subject: $(mail.subjectInputSelector),
-            message: $(mail.messageInputSelector)
+            contact: $(mailForm.selector),
+            name: $(mailForm.name),
+            email: $(mailForm.email),
+            subject: $(mailForm.subject),
+            message: $(mailForm.message)
         };
 
         this.$modal = {
-            form: $(modal.modalFormSelector),
-            title: $(modal.modalTitleSelector),
-            body: $(modal.modalBodySelector)
+            selector: $(modal.selector),
+            title: $(modal.title),
+            body: $(modal.body)
         };
 
     }
 
-    _validate() {
-
-        const name = this.$mail.name.val();
-        const email = this.$mail.email.val();
-        const subject = this.$mail.subject.val();
-        const message = this.$mail.message.val();
-
+    _validate(name = this.$mail.name.val(), email = this.$mail.email.val(), subject = this.$mail.subject.val(), message = this.$mail.message.val()) {
+        
         const validateEmail = (email) => {
 
             const regex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -43,7 +38,8 @@ class Mail {
             this.request(name, email, subject, message);
 
         } else {
-
+            
+            console.log(name + "\n" + email + "\n" + subject + "\n" + message);
             this._respond(false);
 
         }
@@ -109,38 +105,21 @@ class Mail {
 
         }
 
-        const $form = this.$modal.form;
+        const $modal = this.$modal.selector;
         const $title = this.$modal.title;
         const $body = this.$modal.body;
 
-        $form.find($title).text(title);
-        $form.find($body).text(message);
+        $modal.find($title).text(title);
+        $modal.find($body).text(message);
 
-        $form.modal({
+        $modal.modal({
             show: true
         });
 
     }
 
-    send() {
-        this._validate();
+    send(name, email, subject, message) {
+        this._validate(name, email, subject, message);
     }
 
 }
-
-const mail = new Mail({
-    contactFormSelector: '.contact',
-    nameInputSelector: '#name',
-    emialInputSelector: '#email',
-    subjectInputSelector: '#subject',
-    messageInputSelector: '#message'
-}, {
-    modalFormSelector: '#modal-dialog',
-    modalTitleSelector: '.modal-title',
-    modalBodySelector: '.modal-body'
-});
-
-$('#send').on('click', (event) => {
-    mail.send();
-    event.preventDefault(event);
-});

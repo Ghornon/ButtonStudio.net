@@ -61,8 +61,3 @@ class Typing {
     }
 
 }
-
-const typing = new Typing();
-
-//Event Listener
-$(window).scroll(() => throttle(typing.playAnimation(), 200));

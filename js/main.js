@@ -91,9 +91,32 @@ const eventListener = () => {
 
     });
     
+    $('#send').on('click', (event) => {
+        mail.send();
+        event.preventDefault(event);
+    });
     
+    $(window).scroll(() => throttle(typing.playAnimation(), 200));
+       
+};
+
+const typing = new Typing('typing', 'typed');
     
-}
+const mailForm = {
+    selector: '.contact',
+    name: '#name',
+    email: '#email',
+    subject: '#subject',
+    message: '#message'
+};
+
+const modal = {
+    selector: '#modal-dialog',
+    title: '.modal-title',
+    body: '.modal-body'
+};
+
+const mail = new Mail(mailForm, modal);
 
 $(document).ready(() => {
     

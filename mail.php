@@ -130,6 +130,6 @@ if ( check() ) {
 
 }
 
-//respond(false, $ajax, $lang);
+//respond(true, $ajax, $lang);
 
 ?>
