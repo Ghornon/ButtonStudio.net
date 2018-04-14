@@ -1,5 +1,3 @@
-'use strict';
-
 class Typing {
 
     constructor(target = 'typing', endClass = 'typed') {

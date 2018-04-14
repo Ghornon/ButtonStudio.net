@@ -843,10 +843,7 @@ if(!isset($_GET['lang'])) {
     <script>$('body').removeClass('nojs');</script>
     
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="js/Button.js"></script>
-    <script src="js/Typing.js"></script>
-    <script src="js/Mail.js"></script>
-    <script src="js/main.js"></script>
+    <script src="js/index.js"></script>
     
     <?php if ( isset( $_GET['signin'] ) ) { ?>
     

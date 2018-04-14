@@ -1,5 +1,3 @@
-'use strict';
-
 const throttle = (callback, limit) => {
     
     let wait = false;
@@ -101,7 +99,7 @@ const eventListener = () => {
 };
 
 const typing = new Typing('typing', 'typed');
-    
+
 const mailForm = {
     selector: '.contact',
     name: '#name',

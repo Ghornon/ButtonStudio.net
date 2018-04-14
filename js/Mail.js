@@ -1,5 +1,3 @@
-'use strict';
-
 class Mail {
 
     constructor(mailForm, modal) {
