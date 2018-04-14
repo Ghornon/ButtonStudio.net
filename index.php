@@ -507,15 +507,15 @@ if(!isset($_GET['lang'])) {
 
                             <?php if ($lang != "pl") { ?>
 
-                                <h6>Flat design</h6>
+                                <h6>Website of therapy cabinet</h6>
 
                             <?php } else { ?>
 
-                                <h6>Projekt kafelkowy</h6>
+                                <h6>Strona internetowa gabinetu</h6>
 
                             <?php } ?>
 
-                            <h4><a href="portfolio/roulette/" target="_blank">Roulette</a></h4>
+                            <h4><a href="http://preview.buttonstudio.net/szplotka.pl/" target="_blank">Szplotka.pl</a></h4>
 
                         </footer>
 
