@@ -851,6 +851,11 @@ h1, h2, h3, h4, h5, h6 {
         @include shadow();
         margin-top: 30px;
         position: relative;
+        
+        .github a {
+            text-decoration: underline;
+            color: $color-dark;
+        }
 
         .icon {
             background: $bg_dark;

@@ -437,12 +437,14 @@ if(!isset($_GET['lang'])) {
                             <p class="content">
                                 A few selected projects created by me.
                             </p>
+                            <p class="github">See also my <a href="https://github.com/Ghornon">github <i class="fa fa-github" aria-hidden="true"></i></a> profile</p>
 
                             <?php } else { ?>
 
                             <p class="content">
                                 Kilka wybranych projektów stworzonych przeze mnie.
                             </p>
+                            <p class="github">zobacz również mój <a href="https://github.com/Ghornon">github <i class="fa fa-github" aria-hidden="true"></i></a> profil</p>
 
                         <?php } ?>
 
