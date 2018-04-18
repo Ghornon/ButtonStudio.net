@@ -15,7 +15,7 @@ const path = {
 
 const files = {
     sass: ['style.scss'],
-    css: ['bootstrap.min.css','font-awesome.min.css', 'style.css'],
+    css: ['bootstrap.css','font-awesome.css', 'style.css'],
     js: ['Button.js', 'Mail.js', 'Typing.js', 'main.js']
 };
 
