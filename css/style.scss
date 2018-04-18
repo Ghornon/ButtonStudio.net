@@ -17,10 +17,6 @@
 *       http://fontawesome.io
 */
 
-@import 'fonts.scss';
-@import 'bootstrap.min.css';
-@import 'font-awesome.min.css';
-
 /*======================================*/
 
 
@@ -28,6 +24,7 @@
 
 
 /*======================================*/
+@import 'fonts.scss';
 
 $bg_dark: #212429;
 $bg_bright: #f6f6f6;
