@@ -44,12 +44,8 @@ if(!isset($_GET['lang'])) {
     <meta property="og:image" content="images/ogimage.jpg" />
 
     <!-- Text/css -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Hind|Montserrat:700|Righteous" rel="stylesheet">
-    <link href="css/style.css" type="text/css" rel="stylesheet">
-    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
+    <link href="css/index.css" type="text/css" rel="stylesheet">
     <link rel="shortcut icon" type="image/png" href="images/favicon.png">
-    
     
     <!-- Title -->
     <title>ButtonStudio.net</title>
@@ -90,7 +86,7 @@ if(!isset($_GET['lang'])) {
     
     <nav id="navbar">
 
-        <h4 class="logo hidden-xs"><a href="/">&#60;ButtonStudio.net /&#62;</a></h4>
+        <h4 class="logo hidden-xs"><a href="./">&#60;ButtonStudio.net /&#62;</a></h4>
         
         <div class="switch">
             <input type="checkbox" name="lang" id="lang">
@@ -381,9 +377,9 @@ if(!isset($_GET['lang'])) {
 
                         <header class="header">
 
-                            <img src="images/portfolio_2.jpg" alt="Page 3">
+                            <img src="images/portfolio_3.jpg" alt="Page 3">
                             <div class="icon">
-                                <i class="fa fa-paint-brush" aria-hidden="true"></i>
+                                <i class="fa fa-picture-o" aria-hidden="true"></i>
                             </div>
 
                         </header>
@@ -392,15 +388,15 @@ if(!isset($_GET['lang'])) {
 
                             <?php if ($lang != "pl") { ?>
 
-                                <h6>Portfolio / Blog</h6>
+                                <h6>Website of therapy cabinet</h6>
 
                             <?php } else { ?>
 
-                                <h6>Wizytówka / Blog</h6>
+                                <h6>Strona internetowa gabinetu</h6>
 
                             <?php } ?>
 
-                            <h4><a href="portfolio/loremipsum/" target="_blank">Lorem ipsum</a></h4>
+                            <h4><a href="http://preview.buttonstudio.net/szplotka.pl/" target="_blank">Szplotka.pl</a></h4>
 
                         </footer>
 
@@ -437,14 +433,14 @@ if(!isset($_GET['lang'])) {
                             <p class="content">
                                 A few selected projects created by me.
                             </p>
-                            <p class="github">See also my <a href="https://github.com/Ghornon">github <i class="fa fa-github" aria-hidden="true"></i></a> profile</p>
+                            <p class="github">See also my <a href="https://github.com/Ghornon">github <i class="fa fa-github" aria-hidden="true"></i></a> repositories.</p>
 
                             <?php } else { ?>
 
                             <p class="content">
                                 Kilka wybranych projektów stworzonych przeze mnie.
                             </p>
-                            <p class="github">zobacz również mój <a href="https://github.com/Ghornon">github <i class="fa fa-github" aria-hidden="true"></i></a> profil</p>
+                            <p class="github">Zobacz również moje repozytoria na <a href="https://github.com/Ghornon">github <i class="fa fa-github" aria-hidden="true"></i></a>.</p>
 
                         <?php } ?>
 
@@ -498,9 +494,9 @@ if(!isset($_GET['lang'])) {
 
                         <header class="header">
 
-                            <img src="images/portfolio_3.jpg" alt="Page 3">
+                            <img src="images/portfolio_2.jpg" alt="Page 3">
                             <div class="icon">
-                                <i class="fa fa-picture-o" aria-hidden="true"></i>
+                                <i class="fa fa-paint-brush" aria-hidden="true"></i>
                             </div>
 
                         </header>
@@ -509,15 +505,15 @@ if(!isset($_GET['lang'])) {
 
                             <?php if ($lang != "pl") { ?>
 
-                                <h6>Website of therapy cabinet</h6>
+                                <h6>Portfolio / Blog</h6>
 
                             <?php } else { ?>
 
-                                <h6>Strona internetowa gabinetu</h6>
+                                <h6>Wizytówka / Blog</h6>
 
                             <?php } ?>
 
-                            <h4><a href="http://preview.buttonstudio.net/szplotka.pl/" target="_blank">Szplotka.pl</a></h4>
+                            <h4><a href="portfolio/loremipsum/" target="_blank">Lorem ipsum</a></h4>
 
                         </footer>
 
@@ -754,11 +750,11 @@ if(!isset($_GET['lang'])) {
         
         <?php if ($lang != "pl") { ?>
         
-            <footer id="footer"><a href="/">ButtonStudio.net</a> <?php call_user_func(function($y){$c=date('Y');echo $y.(($y!=$c)?'-'.$c:'');}, 2017); ?> &copy; All rights reserved!</footer>
+            <footer id="footer"><a href="./">ButtonStudio.net</a> <?php call_user_func(function($y){$c=date('Y');echo $y.(($y!=$c)?'-'.$c:'');}, 2017); ?> &copy; All rights reserved!</footer>
         
         <?php } else { ?>
         
-            <footer id="footer"><a href="/">ButtonStudio.net</a> <?php call_user_func(function($y){$c=date('Y');echo $y.(($y!=$c)?'-'.$c:'');}, 2017); ?> &copy; Wszelkie prawa zastrzeżone!</footer>
+            <footer id="footer"><a href="./">ButtonStudio.net</a> <?php call_user_func(function($y){$c=date('Y');echo $y.(($y!=$c)?'-'.$c:'');}, 2017); ?> &copy; Wszelkie prawa zastrzeżone!</footer>
         
         <?php } ?>
         
