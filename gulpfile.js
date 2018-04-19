@@ -1,4 +1,4 @@
-// Define some plugins!
+ /* Define some plugins */
 const gulp = require('gulp');
 const sass = require('gulp-sass');
 const cssnano = require('gulp-cssnano');
@@ -34,46 +34,46 @@ const src = {
 /* Compile Sass. */
 
 gulp.task('sass', function () {
-    gulp.src(src.sass)                             // Create a stream in the directory where our Sass files are located.
+    gulp.src(src.sass)                                          // Create a stream in the directory where our Sass files are located.
         .pipe(sourcemaps.init())
-        .pipe(sass.sync().on('error', sass.logError))    // Compile Sass into style.css.
+        .pipe(sass.sync().on('error', sass.logError))           // Compile Sass into style.css.
         .pipe(sourcemaps.write('.'))
-        .pipe(gulp.dest(path.css));                     // Write style.css to the project's directory.
-    gulp.start('concat');
+        .pipe(gulp.dest(path.css));                             // Write style.css to the project's directory.
+    gulp.start('release');
 });
 
-/* Concatenate Css. */
-
-gulp.task('concat', function () {
-    return gulp.src(src.css)                             // Create a stream in the directory where our Sass files are located.
-        .pipe(sourcemaps.init())
-        .pipe(autoprefixer({
-            browsers: ['last 2 versions'],
-            cascade: true
-        }))
-        .pipe(concat('index.css'))
-        .pipe(cssnano())                                 // Minify and optimize style.css
-        .pipe(sourcemaps.write('.'))
-        .pipe(gulp.dest(path.css));                     // Write style.css to the project's directory.
-});
-
-/* Compile js. */
+/* Compile es6 to es5. */
 
 gulp.task('babel', function () {
-    return gulp.src(src.js)                             // Create a stream in the directory where our Sass files are located.
+    gulp.src(src.js)                                            // Create a stream in the directory where our Sass files are located.
         .pipe(sourcemaps.init())
         .pipe(babel({
             presets: ['es2015']
         }))
         .pipe(concat('index.js'))
-        .pipe(uglify())                                 // Minify and optimize
+        .pipe(uglify())                                         // Minify and optimize
         .pipe(sourcemaps.write('.'))
-        .pipe(gulp.dest(path.js));                      // Write index.js to the project's directory.
+        .pipe(gulp.dest(path.js));                              // Write index.js to the project's directory.
+});
+
+/* Release CSS*/
+
+gulp.task('release', function () {
+    gulp.src(src.css)                                           // Create a stream in the directory where our Sass files are located.
+        .pipe(sourcemaps.init())
+        .pipe(autoprefixer({
+            browsers: ['last 2 versions'],
+            cascade: true
+        }))
+        .pipe(cssnano({discardComments: {removeAll: true}}))    // Minify and optimize style.css
+        .pipe(concat('index.css'))
+        .pipe(sourcemaps.write('.'))
+        .pipe(gulp.dest(path.css));                             // Write style.css to the project's directory.
 });
 
 /* Watch the directory for changes. */
 
 gulp.task('watch', function() {
-  gulp.watch('./css/*.scss', ['sass']);                 // If a file changes, re-run 'sass'
-  gulp.watch('./js/*.js', ['babel']);                   // If a file changes, re-run 'babel'
+  gulp.watch('./css/*.scss', ['sass']);                         // If a file changes, re-run 'sass'
+  gulp.watch('./js/*.js', ['babel']);                           // If a file changes, re-run 'babel'
 });
