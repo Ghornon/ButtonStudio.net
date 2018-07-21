@@ -1,15 +1,6 @@
 <?php
 
-//Header location
-
-if (!isset($_POST['name']) && !isset($_POST['email']) && !isset($_POST['subject']) && !isset($_POST['message'])) {
-
-    header('Location: index.php');
-    exit();
-
-}
-
-//Set Get's variables
+//Get variables
 
 if (isset($_GET['lang'])) {
 
@@ -22,15 +13,13 @@ if (isset($_GET['lang'])) {
     $lang = "en";
 }
 
-if (isset($_GET['ajax'])) {
+//Header location
 
-    if ($_GET['ajax'])
-        $ajax = true;
-    else 
-        $ajax = false;
+if (!isset($_POST['name']) && !isset($_POST['email']) && !isset($_POST['subject']) && !isset($_POST['message'])) {
 
-} else {
-    $ajax = false;
+    header('Location: ' . $lang);
+    exit();
+
 }
 
 //Functions
@@ -72,14 +61,14 @@ function check() {
 
 }
 
-function respond( $type, $mute, $lang ) {
+function respond( $type, $lang ) {
 
-    if ( $mute ) {
+    if(isset($_SERVER['HTTP_X_REQUESTED_WITH']) && !empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest') {
 
         if ( $type )
-            echo json_encode( array( "status" => true ) );
+            echo json_encode( array( "delivered" => true ) );
         else
-            echo json_encode( array( "status" => false ) );
+            echo json_encode( array( "delivered" => false ) );
 
     } else {
 
@@ -100,6 +89,8 @@ function respond( $type, $mute, $lang ) {
         }
 
     }
+
+    
          
 }
     
@@ -115,21 +106,21 @@ if ( check() ) {
 
     if( @mail('contact@buttonstudio.net', $subject, $message, $headers) ) {
 
-        respond(true, $ajax, $lang);
+        respond(true, $lang);
 
     } else {
 
-        respond(false, $ajax, $lang);
+        respond(false, $lang);
 
     }
 
 
 } else {
 
-    respond(false, $ajax, $lang);
+    respond(false, $lang);
 
 }
 
-//respond(true, $ajax, $lang);
+// respond(true, $lang);
 
 ?>

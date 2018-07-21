@@ -11,7 +11,7 @@ if(!isset($_GET['lang'])) {
         $lang = "en";
     }
 
-    header('Location: ?lang='.$lang);
+    header('Location: ' . $lang);
     exit();
 
 } else {
@@ -41,11 +41,11 @@ if(!isset($_GET['lang'])) {
     <meta name="keywords" content="button, studio, net, web, programer, designer, front-end, developer">
     <meta name="description" content="ButtonStudio.net - Designer, front-end developer">
     
-    <meta property="og:image" content="images/ogimage.jpg" />
+    <meta property="og:image" content="dist/img/ogimage.jpg" />
 
     <!-- Text/css -->
-    <link href="css/index.css" type="text/css" rel="stylesheet">
-    <link rel="shortcut icon" type="image/png" href="images/favicon.png">
+    <link href="dist/bundle.css" type="text/css" rel="stylesheet">
+    <link rel="shortcut icon" type="image/png" href="dist/img/favicon.png">
     
     <!-- Title -->
     <title>ButtonStudio.net</title>
@@ -54,7 +54,10 @@ if(!isset($_GET['lang'])) {
 
 <body class="nojs">
 
-    <!------------------------------------------------------------------
+    <script>document.body.classList.remove('nojs');</script>
+
+    <!--
+
     ╔═══╦╗───────────────╔╗───────╔╗───────────────────────────────╔╗───
     ║╔═╗║║───────────────║║─────╔╦╝╚╗──────────────────────────────║║───
     ║╚═╝║║╔══╦══╦══╦══╗╔═╝╠══╦═╗║╠╗╔╝╔══╦══╦══╦╗─╔╗╔╗╔╦╗─╔╗╔══╦══╦═╝╠══╗
@@ -72,12 +75,12 @@ if(!isset($_GET['lang'])) {
     *       daneden.github.io/animate.css/
     *       fontawesome.io
     
-    ------------------------------------------------------------------->
+    -->
 
     <!-- Section Preloader -->
 
     <div id="preloader">
-        
+
         <div class="loader"></div>
         
     </div>
@@ -90,7 +93,7 @@ if(!isset($_GET['lang'])) {
         
         <div class="switch">
             <input type="checkbox" name="lang" id="lang">
-            <a href="?lang=en">EN</a><a href="?lang=pl" >PL</a>
+            <a href="en">EN</a><a href="pl" >PL</a>
         </div>
 
     </nav>
@@ -105,21 +108,21 @@ if(!isset($_GET['lang'])) {
                 
                 <div class="content">
 
-                    <?php if ($lang != "pl") { ?>
+                    <?php if ($lang != "pl"): ?>
                        
                         <p>var Hi = function() {</p>
                         <p class="tab">I’m Simon</p>
-                        <p class="tab">Front-end developer</p>
+                        <p class="tab">Full stack developer</p>
                         <p>};</p> 
                           
-                    <?php } else { ?>
+                    <?php else: ?>
                        
                         <p>var Hi = function() {</p>
                         <p class="tab">Jestem Szymon</p>
-                        <p class="tab">Front-end developer</p>
+                        <p class="tab">Full stack developer</p>
                         <p>};</p> 
 
-                    <?php } ?>
+                    <?php endif; ?>
 
                 </div>
 
@@ -147,52 +150,51 @@ if(!isset($_GET['lang'])) {
                                 <i class="fa fa-user-secret" aria-hidden="true"></i>
                             </div>
 
-                            <?php if ($lang != "pl") { ?>
+                            <?php if ($lang != "pl"): ?>
 
                                 <h6>Personal</h6>
                                 <h4 class="typing">Who the f!@#?</h4>
 
-                            <?php } else { ?>
+                            <?php else: ?>
 
                                 <h6>O mnie</h6>
                                 <h4 class="typing">Że kto?</h4>
 
-                            <?php } ?>
+                            <?php endif; ?>
 
                         </header>
 
-                        <?php if ($lang != "pl") { ?>
+                        <?php if ($lang != "pl"): ?>
 
                             <p class="content">
-                                My name is Szymon, I'm a student upper secondary school.<br> 
-                                Besides, I'm designer of user interfaces (UIs) and front-end developer.<br>
-                                <br>
-                                Programming and creating websites are my passion and always try to make a high quality website.<br>
-                                Despite my young age and little experience, I could surprise you of my skills and passion.
+                                My name is Simon, I'm graduated of upper secondary school for IT technician. <br> 
+                                Now I deal with the design of user interfaces (UIs) for web and web development.<br><br>
+                                Programming, designing and creating a website is my biggest hobby. I do it with passion for that I always try to make height quality projects. Despite my young age and little experience, I could surprise you because I do it for the love of coding.
+
                             </p>
 
-                        <?php } else { ?>
+                        <?php else: ?>
 
                             <p class="content">
-                                Nazywam się Szymon i jestem uczniem technikum.<br> 
-                                Poza tym zajmuje się projektowaniem oraz tworzeniem stron internetowych.<br>
+                                Nazywam się Szymon, jestem absolwentem technikum na kierunku informatyka.<br> 
+                                Zajmuję się projektowaniem interfejsów użytkownika (UI) oraz tworzeniem stron internetowych. <br>
                                 <br>
-                                Tworzenie witryn internetowych jest moją pasją dlatego też zawsze staram się tworzyć strony na wysokim poziomie. Pomimo mojego młodego wieku i niewielkiego doświadczenie, mogę zaskoczyć cię moimi umiejętnościami i pasją.
+                                Programowanie, projektowanie i tworzenie stron internetowych to moje największe hobby. Robię to z pasją, zawsze staram się tworzyć projekty o wysokiej jakości. Pomimo młodego wieku i niewielkiego doświadczenia mogę cię zaskoczyć, ponieważ robię to z miłości do kodowania.
                             </p>
 
-                        <?php } ?>
+                        <?php endif; ?>
 
                         <footer class="footer">
 
-                            <?php if ($lang != "pl") { ?>
+                            <?php if ($lang != "pl"): ?>
 
                                 <a class="button scrollTo" href="#contact">Contact</a>
 
-                            <?php } else { ?>
+                            <?php else: ?>
 
                                 <a class="button scrollTo" href="#contact">Kontakt</a>
 
-                            <?php } ?>
+                            <?php endif; ?>
                         </footer>
 
                     </article>
@@ -211,7 +213,7 @@ if(!isset($_GET['lang'])) {
 
                         </header>
 
-                        <?php if ($lang != "pl") { ?>
+                        <?php if ($lang != "pl"): ?>
 
                             <p class="content">Creativity is intelligence having fun.</p>
 
@@ -219,7 +221,7 @@ if(!isset($_GET['lang'])) {
                                 <h6>Albert Einstein</h6>
                             </footer>
 
-                        <?php } else { ?>
+                        <?php else: ?>
 
                             <p class="content">Kreatywność jest zabawą inteligencji.</p>
 
@@ -227,7 +229,7 @@ if(!isset($_GET['lang'])) {
                                 <h6>Albert Einstein</h6>
                             </footer>
 
-                        <?php } ?>
+                        <?php endif; ?>
 
                     </article>
 
@@ -243,15 +245,15 @@ if(!isset($_GET['lang'])) {
 
                         <footer class="footer">
 
-                            <?php if ($lang != "pl") { ?>
+                            <?php if ($lang != "pl"): ?>
 
                                 <h6>Image</h6>
 
-                            <?php } else { ?>
+                            <?php else: ?>
 
                                 <h6>Zdjęcie</h6>
 
-                            <?php } ?>
+                            <?php endif; ?>
 
                             <h4>Szymon "Button" Guzik</h4>
 
@@ -271,49 +273,51 @@ if(!isset($_GET['lang'])) {
                                 <i class="fa fa-briefcase" aria-hidden="true"></i>
                             </div>
 
-                            <?php if ($lang != "pl") { ?>
+                            <?php if ($lang != "pl"): ?>
 
                                 <h6>Work</h6>
                                 <h4 class="typing">What I do?</h4>
 
-                            <?php } else { ?>
+                            <?php else: ?>
 
                                 <h6>Praca</h6>
                                 <h4 class="typing">Czym się zajmuje?</h4>
 
-                            <?php } ?>
+                            <?php endif; ?>
 
                         </header>
 
-                        <?php if ($lang != "pl") { ?>
+                        <?php if ($lang != "pl"): ?>
 
                             <p class="content">
-                                I design and create visual forms of websites (front-end). I make a website user interface starting from the drawing on the sheet and finishing on the full functionality website.<br>
+                                I design and create visual form of website (front-end).<br>
+                                I make a website user interface with step by step starting at devise template and ending at full functionally website.<br>
                                 <br>
-                                The websites, which I do use the latest technology, so that every project what I made was perfectly presented to the highest standards like W3C.
+                                I use many of the latest technologies like HTML 5, CSS 3, JavaScript ES6, responsive web design, so that every project what I made is modern and perfectly presented to the highest standards like W3C.
                             </p>
 
-                            <?php } else { ?>
+                            <?php else: ?>
 
                             <p class="content">
-                                Projektuje i wykonuje strony internetowe od strony wizualnej (front-end). Tworzę interfejsy użytkownika zaczynając od rysunku na kartce papieru, kończąc na w pełni funkcjonalnej stronie www.<br>
-                                <br>
-                                Strony wykonane przeze mnie wykorzystują najnowsze technologie dlatego też każdy projekt jest dostosowany do najwyższych standardów takich jak W3C.
+                                Projektuje i wykonuje strony internetowe od strony wizualnej (front-end'u).<br>
+                                Tworzę interfejsy użytkownika krok po kroku zaczynając od wymyślenia szablonu i kończąc na wpełni funkcjonalnej stronie www.<br>
+                                <br><br>
+                                Używam najnowszych technolgii takich jak HTML 5, CSS 3, JavaScript ES6, responsive web design, dlatego dlatego też każdy projekt jest nowoczesny oraz jest dostosowany do najwyższych standardów takich jak W3C.
                             </p>
 
-                        <?php } ?>
+                        <?php endif; ?>
 
                         <footer class="footer">
 
-                            <?php if ($lang != "pl") { ?>
+                            <?php if ($lang != "pl"): ?>
 
                                 <a class="button scrollTo" href="#portfolio">Portfolio</a>
 
-                            <?php } else { ?>
+                            <?php else: ?>
 
                                 <a class="button scrollTo" href="#portfolio">Portfolio</a>
 
-                            <?php } ?>
+                            <?php endif; ?>
 
                         </footer>
 
@@ -343,7 +347,7 @@ if(!isset($_GET['lang'])) {
 
                         <header class="header">
 
-                            <img src="images/portfolio_1.jpg" alt="Page 1">
+                            <img src="dist/img/portfolio_1.jpg" alt="Page 1">
                             <div class="icon">
                                 <i class="fa fa-camera" aria-hidden="true"></i>
                             </div>
@@ -352,17 +356,17 @@ if(!isset($_GET['lang'])) {
 
                         <footer class="footer">
 
-                            <?php if ($lang != "pl") { ?>
+                            <?php if ($lang != "pl"): ?>
 
                                 <h6>Portfolio / Resume</h6>
 
-                            <?php } else { ?>
+                            <?php else: ?>
 
                                 <h6>Portfolio</h6>
 
-                            <?php } ?>
+                            <?php endif; ?>
 
-                            <h4><a href="portfolio/old/" target="_blank">Button Studio</a></h4>
+                            <h4><a href="http://portfolio.buttonstudio.net/buttonstudio/" target="_blank">Button Studio</a></h4>
 
                         </footer>
 
@@ -377,7 +381,7 @@ if(!isset($_GET['lang'])) {
 
                         <header class="header">
 
-                            <img src="images/portfolio_3.jpg" alt="Page 3">
+                            <img src="dist/img/portfolio_3.jpg" alt="Page 3">
                             <div class="icon">
                                 <i class="fa fa-picture-o" aria-hidden="true"></i>
                             </div>
@@ -386,17 +390,17 @@ if(!isset($_GET['lang'])) {
 
                         <footer class="footer">
 
-                            <?php if ($lang != "pl") { ?>
+                            <?php if ($lang != "pl"): ?>
 
                                 <h6>Website of therapy cabinet</h6>
 
-                            <?php } else { ?>
+                            <?php else: ?>
 
                                 <h6>Strona internetowa gabinetu</h6>
 
-                            <?php } ?>
+                            <?php endif; ?>
 
-                            <h4><a href="http://preview.buttonstudio.net/szplotka.pl/" target="_blank">Szplotka.pl</a></h4>
+                            <h4><a href="http://szplotka.pl/" target="_blank">Szplotka.pl</a></h4>
 
                         </footer>
 
@@ -414,35 +418,35 @@ if(!isset($_GET['lang'])) {
                                 <i class="fa fa-pencil" aria-hidden="true"></i>
                             </div>
 
-                            <?php if ($lang != "pl") { ?>
+                            <?php if ($lang != "pl"): ?>
 
                                 <h6>Portfolio</h6>
                                 <h4 class="typing">My projects</h4>
 
-                            <?php } else { ?>
+                            <?php else: ?>
 
                                 <h6>Portfolio</h6>
                                 <h4 class="typing">Moje projekty</h4>
 
-                            <?php } ?>
+                            <?php endif; ?>
 
                         </header>
 
-                        <?php if ($lang != "pl") { ?>
+                        <?php if ($lang != "pl"): ?>
 
                             <p class="content">
                                 A few selected projects created by me.
                             </p>
                             <p class="github">See also my <a href="https://github.com/Ghornon">github <i class="fa fa-github" aria-hidden="true"></i></a> repositories.</p>
 
-                            <?php } else { ?>
+                            <?php else: ?>
 
                             <p class="content">
                                 Kilka wybranych projektów stworzonych przeze mnie.
                             </p>
                             <p class="github">Zobacz również moje repozytoria na <a href="https://github.com/Ghornon">github <i class="fa fa-github" aria-hidden="true"></i></a>.</p>
 
-                        <?php } ?>
+                        <?php endif; ?>
 
                     </article>
 
@@ -466,7 +470,7 @@ if(!isset($_GET['lang'])) {
 
                         </header>
 
-                        <?php if ($lang != "pl") { ?>
+                        <?php if ($lang != "pl"): ?>
 
                             <p class="content">Creativity is just connecting things. When you ask creative people how they did something, they feel a little guilty because they didn't really do it, they just saw something. It seemed obvious to them after a while. That's because they were able to connect experiences they've had and synthesize new things.</p>
 
@@ -474,7 +478,7 @@ if(!isset($_GET['lang'])) {
                                 <h6>Steve Jobs</h6>
                             </footer>
 
-                        <?php } else { ?>
+                        <?php else: ?>
 
                             <p class="content">Kreatywność to po prostu łączenie rzeczy. Kiedy pytasz kreatywnych ludzi, jak oni coś zrobili, czują się trochę winni, ponieważ tak naprawdę nie zrobili tego, po prostu coś zobaczyli. Po pewnym czasie wydawało im się to oczywiste. To dlatego, że potrafili połączyć doświadczenia, które mieli i syntetyzować nowe rzeczy.</p>
 
@@ -482,7 +486,7 @@ if(!isset($_GET['lang'])) {
                                 <h6>Steve Jobs</h6>
                             </footer>
 
-                        <?php } ?>
+                        <?php endif; ?>
 
                     </article>
 
@@ -494,7 +498,7 @@ if(!isset($_GET['lang'])) {
 
                         <header class="header">
 
-                            <img src="images/portfolio_2.jpg" alt="Page 3">
+                            <img src="dist/img/portfolio_2.jpg" alt="Page 3">
                             <div class="icon">
                                 <i class="fa fa-paint-brush" aria-hidden="true"></i>
                             </div>
@@ -503,17 +507,17 @@ if(!isset($_GET['lang'])) {
 
                         <footer class="footer">
 
-                            <?php if ($lang != "pl") { ?>
+                            <?php if ($lang != "pl"): ?>
 
                                 <h6>Portfolio / Blog</h6>
 
-                            <?php } else { ?>
+                            <?php else: ?>
 
                                 <h6>Wizytówka / Blog</h6>
 
-                            <?php } ?>
+                            <?php endif; ?>
 
-                            <h4><a href="portfolio/loremipsum/" target="_blank">Lorem ipsum</a></h4>
+                            <h4><a href="http://portfolio.buttonstudio.net/loremipsum/" target="_blank">Lorem ipsum</a></h4>
 
                         </footer>
 
@@ -527,7 +531,7 @@ if(!isset($_GET['lang'])) {
 
                         <header class="header">
 
-                            <img src="images/portfolio_4.jpg" alt="Page 4">
+                            <img src="dist/img/portfolio_4.jpg" alt="Page 4">
                             <div class="icon">
                                 <i class="fa fa-thumb-tack" aria-hidden="true"></i>
                             </div>
@@ -536,17 +540,17 @@ if(!isset($_GET['lang'])) {
 
                         <footer class="footer">
 
-                            <?php if ($lang != "pl") { ?>
+                            <?php if ($lang != "pl"): ?>
 
-                                <h6>RPG game front-page</h6>
+                                <h6>Blog, portfolio</h6>
 
-                            <?php } else { ?>
+                            <?php else: ?>
 
-                                <h6>Strona główna gry RPG</h6>
+                                <h6>Blog, portfolio</h6>
 
-                            <?php } ?>
+                            <?php endif; ?>
 
-                            <h4><a href="portfolio/game/" target="_blank">Game</a></h4>
+                            <h4><a href="http://portfolio.buttonstudio.net/zwyrtany.pl/" target="_blank">Zwyrtany.pl</a></h4>
 
                         </footer>
 
@@ -572,18 +576,18 @@ if(!isset($_GET['lang'])) {
                    
                     <div class="description">
                         
-                        <h3>Developer</h3>
-                        <i class="fa fa-code pulse" aria-hidden="true"></i>
+                        <h3>Designer</h3>
+                        <i class="fa fa-paint-brush pulse" aria-hidden="true"></i>
+                       
+                        <?php if ($lang != "pl"): ?>
+                           
+                            <p>Designing is a challenge for human creativity. The task of a designer is not just to create a drawing or a web page template, but to address the needs of the market and the customer so as to create a cohesive whole. Designing something that is supposed to be effecient and eye-friendly is a challenge.</p>
                         
-                        <?php if ($lang != "pl") { ?>
+                        <?php else: ?>
                         
-                            <p>A brand is only as successful as it's implementation, great products should not be defined by design alone, but also by functionality and great user experience. Developers need to strive for clean, elegant and efficient code to assure long-term sustainability and keep software's maintainability.</p>
+                            <p>Projektowanie jest wyzwaniem dla ludzkiej kreatywności. Zadaniem designer'a nie jest tylko stworzeniem rysunku czy też szablonu strony internetowej, ale przewidzenie wymagań rynku i klienta tak aby stworzyć między nim spójną całość. Zaprojektowanie czegoś co ma być efektywne i przyjazne dla oka jest nie lada wyzwaniem.</p>
                         
-                        <?php } else { ?>
-                        
-                            <p>Marka jest tylko tak skuteczna, jak jej wdrożenie a produkty nie powinny być definiowane przez samego projektanta, ale również przez funkcjonalność i duże doświadczenie użytkowników. Deweloperzy muszą dążyć do czystego, eleganckiego i skutecznego kodu, aby zapewnić długoterminową stabilność i zachować jego poprawność.</p>
-                        
-                        <?php } ?>
+                        <?php endif; ?>
                         
                     </div>
                     
@@ -593,18 +597,18 @@ if(!isset($_GET['lang'])) {
                    
                     <div class="description">
                        
-                        <h3>Designer</h3>
-                        <i class="fa fa-paint-brush pulse" aria-hidden="true"></i>
-                       
-                        <?php if ($lang != "pl") { ?>
-                           
-                            <p>Designing is a challenge for human creativity. The task of a designer is not just to create a drawing or a web page template, but to address the needs of the market and the customer so as to create a cohesive whole. Designing something that is supposed to be effecient and eye-friendly is a challenge.</p>
+                        <h3>Developer</h3>
+                        <i class="fa fa-code pulse" aria-hidden="true"></i>
                         
-                        <?php } else { ?>
+                        <?php if ($lang != "pl"): ?>
                         
-                            <p>Projektowanie jest wyzwaniem dla ludzkiej kreatywności. Zadaniem designer'a nie jest tylko stworzeniem rysunku czy też szablonu strony internetowej, ale przewidzenie wymagań rynku i klienta tak aby stworzyć między nim spójną całość. Zaprojektowanie czegoś co ma być efektywne i przyjazne dla oka jest nie lada wyzwaniem.</p>
+                            <p>A brand is only as successful as it's implementation, great products should not be defined by design alone, but also by functionality and great user experience. Developers need to strive for clean, elegant and efficient code to assure long-term sustainability and keep software's maintainability.</p>
                         
-                        <?php } ?>
+                        <?php else: ?>
+                        
+                            <p>Marka jest tylko tak skuteczna, jak jej wdrożenie a produkty nie powinny być definiowane przez samego projektanta, ale również przez funkcjonalność i duże doświadczenie użytkowników. Deweloperzy muszą dążyć do czystego, eleganckiego i skutecznego kodu, aby zapewnić długoterminową stabilność i zachować jego poprawność.</p>
+                        
+                        <?php endif; ?>
                         
                     </div>
                     
@@ -628,7 +632,7 @@ if(!isset($_GET['lang'])) {
                     
                     <div class="description">
                         
-                        <?php if ($lang != "pl") { ?>
+                        <?php if ($lang != "pl"): ?>
                         
                             <h3>Contact</h3>
                             <i class="fa fa-envelope-o" aria-hidden="true"></i>
@@ -639,7 +643,7 @@ if(!isset($_GET['lang'])) {
                                 I'd <i class="fa fa-heart-o pulse" aria-hidden="true"></i><span class="sr-only">love</span> to hear about your project
                             </p>
                         
-                        <?php } else { ?>
+                        <?php else: ?>
                             
                             <h3>Kontakt</h3>
                             <i class="fa fa-envelope-o" aria-hidden="true"></i>
@@ -650,7 +654,7 @@ if(!isset($_GET['lang'])) {
                                 Chciałbym usłyszeć <i class="fa fa-heart-o pulse" aria-hidden="true"></i><span class="sr-only">o</span> Twoim projekcie 
                             </p>
                         
-                        <?php } ?>
+                        <?php endif; ?>
                         
                     </div>
                     
@@ -658,9 +662,9 @@ if(!isset($_GET['lang'])) {
                 
                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                     
-                    <form action="mail.php?lang=<?php if ($lang != "pl") echo "EN"; else echo "PL"; ?>" method="post" class="contact">
+                    <form action="mail.php?lang=<?php echo $lang ?>" method="post" class="contact">
                         
-                        <?php if ($lang != "pl") { ?>
+                        <?php if ($lang != "pl"): ?>
                            
                             <div class="row">
 
@@ -694,12 +698,12 @@ if(!isset($_GET['lang'])) {
                             <div class="row">
 
                                 <div class="col-xs-12">
-                                    <button class="button" id="send">Send</button>
+                                    <button class="button" id="send" type="submit">Send</button>
                                 </div>
 
                             </div>
                         
-                        <?php } else { ?>
+                        <?php else: ?>
                         
                             <div class="row">
 
@@ -733,12 +737,12 @@ if(!isset($_GET['lang'])) {
                             <div class="row">
 
                                 <div class="col-xs-12">
-                                    <button class="button" id="send">Wyślij</button>
+                                    <button class="button" id="send" type="submit">Wyślij</button>
                                 </div>
 
                             </div>
                         
-                        <?php } ?>
+                        <?php endif; ?>
                         
                     </form>
                     
@@ -748,15 +752,15 @@ if(!isset($_GET['lang'])) {
             
         </div>
         
-        <?php if ($lang != "pl") { ?>
+        <?php if ($lang != "pl"): ?>
         
             <footer id="footer"><a href="./">ButtonStudio.net</a> <?php call_user_func(function($y){$c=date('Y');echo $y.(($y!=$c)?'-'.$c:'');}, 2017); ?> &copy; All rights reserved!</footer>
         
-        <?php } else { ?>
+        <?php else: ?>
         
             <footer id="footer"><a href="./">ButtonStudio.net</a> <?php call_user_func(function($y){$c=date('Y');echo $y.(($y!=$c)?'-'.$c:'');}, 2017); ?> &copy; Wszelkie prawa zastrzeżone!</footer>
         
-        <?php } ?>
+        <?php endif; ?>
         
     </section>
     
@@ -779,75 +783,10 @@ if(!isset($_GET['lang'])) {
 
     </div>
     
-    <?php if ( isset( $_GET['signin'] ) ) { ?>
-    
-        <div id="modal-dialog-signin" class="modal" role="dialog">
-
-            <div class="modal-dialog">
-
-                <div class="modal-content">
-
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h4 class="modal-title">Sign in</h4>
-                    </div>
-
-                    <div class="modal-body">
-
-                        <form action="statistics/signin.php?signin=true" method="post" class="modal-form">
-
-                            <div class="row">
-
-                                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                                    <input type="text" name="login" placeholder="Login">
-                                </div>
-
-                                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                                    <input type="text" name="email" placeholder="E-mail">
-                                </div>
-
-                            </div>
-
-                            <div class="row">
-
-                                <div class="col-xs-12">
-                                    <input type="password" name="password" placeholder="Password">
-                                </div>
-
-                            </div>
-
-                            <div class="row">
-
-                                <div class="col-xs-12">
-                                    <button class="button">Sign in</button>
-                                </div>
-
-                            </div>
-
-                        </form>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>    
-       
-    <?php } ?>
-    
     <!-- Scripts -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script>$('body').removeClass('nojs');</script>
     
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="js/index.js"></script>
-    
-    <?php if ( isset( $_GET['signin'] ) ) { ?>
-    
-    <script>$('#modal-dialog-signin').modal('show');</script>
-    
-    <?php } ?>
+    <script src="dist/bundle.js"></script>
 
 </body>
 
