@@ -1,6 +1,6 @@
 {
   "name": "buttonstudio.net",
-  "version": "1.0.0",
+  "version": "1.4.1",
   "description": "My official website",
   "main": "index.js",
   "dependencies": {},
@@ -16,6 +16,8 @@
     "button",
     "studio",
     "front-end",
+    "back-end",
+    "full stuck",
     "developer"
   ],
   "author": "Szymon \"Button\" Guzik",
