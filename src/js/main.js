@@ -106,7 +106,7 @@ const eventListener = () => {
 		let rotateY = -(((event.pageY - $this.offset().top) - ($this.height() / 2)) * 0.04);
 
 		$this.children('.content').css({
-			'-transform': `translate(${moveX}px, ${moveY}px) perspective(400px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`,
+			'transform': `translate(${moveX}px, ${moveY}px) perspective(400px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`,
 		});
 
 	});
