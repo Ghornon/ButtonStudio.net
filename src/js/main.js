@@ -97,23 +97,17 @@ const eventListener = () => {
 
 	$('.banner').on('mousemove', (event) => {
 
-		const animation = (event) => {
+		const $this = $(event.currentTarget);
 
-			const $this = $(event.currentTarget);
+		let moveX = (($this.width() / 2) - (event.pageX - $this.offset().left)) * 0.05;
+		let moveY = (($this.height() / 2) - (event.pageY - $this.offset().top)) * 0.05;
 
-			let moveX = (($this.width() / 2) - (event.pageX - $this.offset().left)) * 0.05;
-			let moveY = (($this.height() / 2) - (event.pageY - $this.offset().top)) * 0.05;
-	
-			let rotateX = ((event.pageX - $this.offset().left) - ($this.width() / 2)) * 0.04;
-			let rotateY = -(((event.pageY - $this.offset().top) - ($this.height() / 2)) * 0.04);
-	
-			$this.children('.content').css({
-				'-transform': `translate(${moveX}px, ${moveY}px) perspective(400px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`,
-			});
+		let rotateX = ((event.pageX - $this.offset().left) - ($this.width() / 2)) * 0.04;
+		let rotateY = -(((event.pageY - $this.offset().top) - ($this.height() / 2)) * 0.04);
 
-		};
-		
-		throttle(animation(event), 80);
+		$this.children('.content').css({
+			'-transform': `translate(${moveX}px, ${moveY}px) perspective(400px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`,
+		});
 
 	});
 
