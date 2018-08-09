@@ -112,14 +112,14 @@ if(!isset($_GET['lang'])) {
                        
                         <p>var Hi = function() {</p>
                         <p class="tab">I’m Simon</p>
-                        <p class="tab">Full stack developer</p>
+                        <p class="tab">Front-end developer</p>
                         <p>};</p> 
                           
                     <?php else: ?>
                        
                         <p>var Hi = function() {</p>
                         <p class="tab">Jestem Szymon</p>
-                        <p class="tab">Full stack developer</p>
+                        <p class="tab">Front-end developer</p>
                         <p>};</p> 
 
                     <?php endif; ?>
