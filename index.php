@@ -44,7 +44,7 @@ if(!isset($_GET['lang'])) {
     <meta property="og:image" content="dist/img/ogimage.jpg" />
 
     <!-- Text/css -->
-    <link href="dist/bundle.css" type="text/css" rel="stylesheet">
+    <link href="dist/bundle.css?version=1.4.4" type="text/css" rel="stylesheet">
     <link rel="shortcut icon" type="image/png" href="dist/img/favicon.png">
     
     <!-- Title -->
@@ -343,7 +343,7 @@ if(!isset($_GET['lang'])) {
 
                 <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
 
-                    <article class="image">
+                    <article class="item">
 
                         <header class="header">
 
@@ -377,7 +377,7 @@ if(!isset($_GET['lang'])) {
 
                 <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
 
-                    <article class="image">
+                    <article class="item">
 
                         <header class="header">
 
@@ -494,7 +494,7 @@ if(!isset($_GET['lang'])) {
 
                 <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
 
-                    <article class="image">
+                    <article class="item">
 
                         <header class="header">
 
@@ -527,7 +527,7 @@ if(!isset($_GET['lang'])) {
 
                 <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
 
-                    <article class="image">
+                    <article class="item">
 
                         <header class="header">
 

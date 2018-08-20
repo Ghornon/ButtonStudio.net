@@ -389,8 +389,6 @@ h1, h2, h3, h4, h5, h6 {
 
 #about {  
     padding-bottom: 40px;
-    animation-fill-mode: forwards;
-    animation-duration: 0.75s;
     
     .icon {
         position: absolute;
@@ -575,8 +573,6 @@ h1, h2, h3, h4, h5, h6 {
 
 #portfolio {
     padding-bottom: 60px;
-    animation-fill-mode: forwards;
-    animation-duration: 0.75s;
 
     .icon {
         position: absolute;
@@ -590,12 +586,13 @@ h1, h2, h3, h4, h5, h6 {
         transition-duration: 250ms;
     }
 
-    .image {
+    .item {
         width: 100%;
         background: #fff;
         @include shadow();
         position: relative;
         margin-top: 30px;
+        transition: 250ms ease-in-out;
         overflow: hidden;
 
         .header {
@@ -606,7 +603,6 @@ h1, h2, h3, h4, h5, h6 {
                 background-size: cover;
                 width: 100%;
                 object-fit: cover;
-                transition: 250ms ease-in-out;
             }
 
             .icon {
@@ -614,13 +610,7 @@ h1, h2, h3, h4, h5, h6 {
                 color: #fff;
                 top: 100%;
             }
-
-            &:hover {
-
-                img {
-                    transform: scale(1.1) rotate(3deg);
-                }
-            }
+            
         }
 
         .footer {
@@ -632,6 +622,11 @@ h1, h2, h3, h4, h5, h6 {
                     color: $color_dark;
                 }
             }
+        }
+
+        &:hover {
+            @include shadow(0.5);
+            transform: scale(0.98);
         }
     }
 
