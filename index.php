@@ -44,7 +44,7 @@ if(!isset($_GET['lang'])) {
     <meta property="og:image" content="dist/img/ogimage.jpg" />
 
     <!-- Text/css -->
-    <link href="dist/bundle.css?version=1.4.4" type="text/css" rel="stylesheet">
+    <link href="dist/bundle.css?version=1.4.5" type="text/css" rel="stylesheet">
     <link rel="shortcut icon" type="image/png" href="dist/img/favicon.png">
     
     <!-- Title -->
@@ -542,15 +542,15 @@ if(!isset($_GET['lang'])) {
 
                             <?php if ($lang != "pl"): ?>
 
-                                <h6>Blog, portfolio</h6>
+                                <h6>Wordpress theme</h6>
 
                             <?php else: ?>
 
-                                <h6>Blog, portfolio</h6>
+                                <h6>Motyw dla wordpress</h6>
 
                             <?php endif; ?>
 
-                            <h4><a href="http://portfolio.buttonstudio.net/zwyrtany.pl/" target="_blank">Zwyrtany.pl</a></h4>
+                            <h4><a href="https://zwyrtany.pl/" target="_blank">Zwyrtany.pl</a></h4>
 
                         </footer>
 

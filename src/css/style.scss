@@ -592,23 +592,30 @@ h1, h2, h3, h4, h5, h6 {
         @include shadow();
         position: relative;
         margin-top: 30px;
-        transition: 250ms ease-in-out;
         overflow: hidden;
 
         .header {
             position: relative;
             width: 100%;
-
+            
             img {
                 background-size: cover;
                 width: 100%;
                 object-fit: cover;
+                transition: 250ms ease-in-out;
             }
 
             .icon {
                 background: $bg_dark;
                 color: #fff;
                 top: 100%;
+            }
+
+            &:hover {
+
+                img {
+                    transform: scale(1.1) rotate(3deg);
+                }
             }
             
         }
@@ -624,10 +631,6 @@ h1, h2, h3, h4, h5, h6 {
             }
         }
 
-        &:hover {
-            @include shadow(0.5);
-            transform: scale(0.98);
-        }
     }
 
     .quote {
