@@ -347,7 +347,7 @@ if(!isset($_GET['lang'])) {
 
                         <header class="header">
 
-                            <img src="dist/img/portfolio_1.jpg" alt="Page 1">
+                            <img src="dist/img/portfolio_buttonstudio.jpg" alt="Page 1">
                             <div class="icon">
                                 <i class="fa fa-camera" aria-hidden="true"></i>
                             </div>
@@ -366,7 +366,7 @@ if(!isset($_GET['lang'])) {
 
                             <?php endif; ?>
 
-                            <h4><a href="http://portfolio.buttonstudio.net/buttonstudio/" target="_blank">Button Studio</a></h4>
+                            <h4><a href="http://portfolio.buttonstudio.net/buttonstudio/">Button Studio</a></h4>
 
                         </footer>
 
@@ -381,7 +381,7 @@ if(!isset($_GET['lang'])) {
 
                         <header class="header">
 
-                            <img src="dist/img/portfolio_3.jpg" alt="Page 3">
+                            <img src="dist/img/portfolio_szplotka.jpg" alt="Page 3">
                             <div class="icon">
                                 <i class="fa fa-picture-o" aria-hidden="true"></i>
                             </div>
@@ -400,7 +400,7 @@ if(!isset($_GET['lang'])) {
 
                             <?php endif; ?>
 
-                            <h4><a href="http://szplotka.pl/" target="_blank">Szplotka.pl</a></h4>
+                            <h4><a href="http://szplotka.pl/">Szplotka.pl</a></h4>
 
                         </footer>
 
@@ -458,35 +458,67 @@ if(!isset($_GET['lang'])) {
 
             <div class="row">
 
-                <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
+				<div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
 
-                    <article class="quote">
+                    <article class="item">
 
                         <header class="header">
 
+                            <img src="dist/img/portfolio_ecommerce.jpg" alt="Page 3">
                             <div class="icon">
-                                <i class="fa fa-quote-right" aria-hidden="true"></i>
+								<i class="fa fa-shopping-cart" aria-hidden="true"></i>
                             </div>
 
                         </header>
 
-                        <?php if ($lang != "pl"): ?>
+                        <footer class="footer">
 
-                            <p class="content">Creativity is just connecting things. When you ask creative people how they did something, they feel a little guilty because they didn't really do it, they just saw something. It seemed obvious to them after a while. That's because they were able to connect experiences they've had and synthesize new things.</p>
+                            <?php if ($lang != "pl"): ?>
 
-                            <footer class="footer">
-                                <h6>Steve Jobs</h6>
-                            </footer>
+                                <h6>React application</h6>
+								<h4><a href="https://github.com/Ghornon/Ecommerce-app">Ecommerce app</a></h4>
 
-                        <?php else: ?>
+                            <?php else: ?>
 
-                            <p class="content">Kreatywność to po prostu łączenie rzeczy. Kiedy pytasz kreatywnych ludzi, jak oni coś zrobili, czują się trochę winni, ponieważ tak naprawdę nie zrobili tego, po prostu coś zobaczyli. Po pewnym czasie wydawało im się to oczywiste. To dlatego, że potrafili połączyć doświadczenia, które mieli i syntetyzować nowe rzeczy.</p>
+                                <h6>Aplikacja napisana w React</h6>
+								<h4><a href="https://github.com/Ghornon/Ecommerce-app">Sklep internetowy</a></h4>
 
-                            <footer class="footer">
-                                <h6>Steve Jobs</h6>
-                            </footer>
+                            <?php endif; ?>
 
-                        <?php endif; ?>
+                        </footer>
+
+                    </article>
+
+                </div>
+
+				<div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+
+                    <article class="item">
+
+                        <header class="header">
+
+                            <img src="dist/img/portfolio_gulp-automation.jpg" alt="Page 3">
+                            <div class="icon">
+								<i class="fa fa-terminal" aria-hidden="true"></i>
+                            </div>
+
+                        </header>
+
+                        <footer class="footer">
+
+                            <?php if ($lang != "pl"): ?>
+
+                                <h6>Gulp tasks ruiner</h6>
+
+                            <?php else: ?>
+
+                                <h6>Zestaw narzędzi gulp</h6>
+
+                            <?php endif; ?>
+
+                            <h4><a href="https://github.com/Ghornon/gulp-automation">Gulp-automation</a></h4>
+
+                        </footer>
 
                     </article>
 
@@ -498,7 +530,7 @@ if(!isset($_GET['lang'])) {
 
                         <header class="header">
 
-                            <img src="dist/img/portfolio_2.jpg" alt="Page 3">
+                            <img src="dist/img/portfolio_loremipsum.jpg" alt="Page 3">
                             <div class="icon">
                                 <i class="fa fa-paint-brush" aria-hidden="true"></i>
                             </div>
@@ -517,7 +549,7 @@ if(!isset($_GET['lang'])) {
 
                             <?php endif; ?>
 
-                            <h4><a href="http://portfolio.buttonstudio.net/loremipsum/" target="_blank">Lorem ipsum</a></h4>
+                            <h4><a href="http://portfolio.buttonstudio.net/loremipsum/">Lorem ipsum</a></h4>
 
                         </footer>
 
@@ -531,7 +563,7 @@ if(!isset($_GET['lang'])) {
 
                         <header class="header">
 
-                            <img src="dist/img/portfolio_4.jpg" alt="Page 4">
+                            <img src="dist/img/portfolio_zwyrtany.jpg" alt="Page 4">
                             <div class="icon">
                                 <i class="fa fa-thumb-tack" aria-hidden="true"></i>
                             </div>
@@ -542,15 +574,15 @@ if(!isset($_GET['lang'])) {
 
                             <?php if ($lang != "pl"): ?>
 
-                                <h6>Wordpress theme</h6>
+                                <h6>Simple blog</h6>
 
                             <?php else: ?>
 
-                                <h6>Motyw dla wordpress</h6>
+                                <h6>Prosty blog</h6>
 
                             <?php endif; ?>
 
-                            <h4><a href="https://zwyrtany.pl/" target="_blank">Zwyrtany.pl</a></h4>
+                            <h4><a href="http://preview.buttonstudio.net/zwyrtany_v2/">Zwyrtany</a></h4>
 
                         </footer>
 
