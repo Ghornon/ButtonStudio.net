@@ -44,7 +44,7 @@ if(!isset($_GET['lang'])) {
     <meta property="og:image" content="dist/img/ogimage.jpg" />
 
     <!-- Text/css -->
-    <link href="dist/bundle.css?version=1.4.5" type="text/css" rel="stylesheet">
+    <link href="dist/bundle.css?version=1.5" type="text/css" rel="stylesheet">
     <link rel="shortcut icon" type="image/png" href="dist/img/favicon.png">
     
     <!-- Title -->
@@ -57,15 +57,6 @@ if(!isset($_GET['lang'])) {
     <script>document.body.classList.remove('nojs');</script>
 
     <!--
-
-    ╔═══╦╗───────────────╔╗───────╔╗───────────────────────────────╔╗───
-    ║╔═╗║║───────────────║║─────╔╦╝╚╗──────────────────────────────║║───
-    ║╚═╝║║╔══╦══╦══╦══╗╔═╝╠══╦═╗║╠╗╔╝╔══╦══╦══╦╗─╔╗╔╗╔╦╗─╔╗╔══╦══╦═╝╠══╗
-    ║╔══╣║║║═╣╔╗║══╣║═╣║╔╗║╔╗║╔╗╬╝║║─║╔═╣╔╗║╔╗║║─║║║╚╝║║─║║║╔═╣╔╗║╔╗║║═╣
-    ║║──║╚╣║═╣╔╗╠══║║═╣║╚╝║╚╝║║║║─║╚╗║╚═╣╚╝║╚╝║╚═╝║║║║║╚═╝║║╚═╣╚╝║╚╝║║═╣
-    ╚╝──╚═╩══╩╝╚╩══╩══╝╚══╩══╩╝╚╝─╚═╝╚══╩══╣╔═╩═╗╔╝╚╩╩╩═╗╔╝╚══╩══╩══╩══╝
-    ───────────────────────────────────────║║─╔═╝║────╔═╝║──────────────
-    ───────────────────────────────────────╚╝─╚══╝────╚══╝──────────────
     
     *    Proudly supported by:
     *		unsplash.com
@@ -90,11 +81,11 @@ if(!isset($_GET['lang'])) {
     <nav id="navbar">
 
         <h4 class="logo hidden-xs"><a href="./">&#60;ButtonStudio.net /&#62;</a></h4>
-        
-        <div class="switch">
-            <input type="checkbox" name="lang" id="lang">
-            <a href="en">EN</a><a href="pl" >PL</a>
-        </div>
+	
+		<div class="switch">
+			<input type="checkbox" name="lang" id="lang">
+			<a href="en">EN</a><a href="pl" >PL</a>
+		</div>
 
     </nav>
     
@@ -102,7 +93,7 @@ if(!isset($_GET['lang'])) {
     
     <section id="intro">
        
-        <div class="container-floud">
+		<div class="container-floud">
                    
             <div class="banner">
                 
@@ -142,7 +133,7 @@ if(!isset($_GET['lang'])) {
 
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
 
-                    <article class="about">
+                    <div class="about">
 
                         <header class="header">
 
@@ -197,13 +188,13 @@ if(!isset($_GET['lang'])) {
                             <?php endif; ?>
                         </footer>
 
-                    </article>
+                    </div>
 
                 </div>
 
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
 
-                    <article class="quote">
+                    <blockquote class="quote">
 
                         <header class="header">
 
@@ -231,9 +222,9 @@ if(!isset($_GET['lang'])) {
 
                         <?php endif; ?>
 
-                    </article>
+                    </blockquote>
 
-                    <article class="image">
+                    <div class="image">
 
                         <header class="header">
 
@@ -259,13 +250,13 @@ if(!isset($_GET['lang'])) {
 
                         </footer>
 
-                    </article>
+                    </div>
 
                 </div>
 
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
 
-                    <article class="about">
+                    <div class="about">
 
                         <header class="header">
 
@@ -321,7 +312,7 @@ if(!isset($_GET['lang'])) {
 
                         </footer>
 
-                    </article>
+                    </div>
 
                 </div>
 
@@ -343,13 +334,13 @@ if(!isset($_GET['lang'])) {
 
                 <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
 
-                    <article class="item">
+                    <div class="item">
 
                         <header class="header">
 
-                            <img src="dist/img/portfolio_buttonstudio.jpg" alt="Page 1">
+                            <img src="dist/img/portfolio_ecommerce.jpg" alt="Page 3">
                             <div class="icon">
-                                <i class="fa fa-camera" aria-hidden="true"></i>
+								<i class="fa fa-shopping-cart" aria-hidden="true"></i>
                             </div>
 
                         </header>
@@ -358,59 +349,58 @@ if(!isset($_GET['lang'])) {
 
                             <?php if ($lang != "pl"): ?>
 
-                                <h6>Portfolio / Resume</h6>
+                                <h6>React application</h6>
+								<h4><a href="https://github.com/Ghornon/Ecommerce-app">Ecommerce app</a></h4>
 
                             <?php else: ?>
 
-                                <h6>Portfolio</h6>
+                                <h6>Aplikacja napisana w React</h6>
+								<h4><a href="https://github.com/Ghornon/Ecommerce-app">Sklep internetowy</a></h4>
 
                             <?php endif; ?>
 
-                            <h4><a href="http://portfolio.buttonstudio.net/buttonstudio/">Button Studio</a></h4>
-
                         </footer>
 
-                    </article>
+                    </div>
 
                 </div>
 
+				<div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
 
-                <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+					<div class="item">
 
-                    <article class="item">
+						<header class="header">
 
-                        <header class="header">
+							<img src="dist/img/portfolio_nowajaga.jpg" alt="Page 3">
+							<div class="icon">
+								<i class="fa fa-cutlery" aria-hidden="true"></i>
+							</div>
 
-                            <img src="dist/img/portfolio_szplotka.jpg" alt="Page 3">
-                            <div class="icon">
-                                <i class="fa fa-picture-o" aria-hidden="true"></i>
-                            </div>
+						</header>
 
-                        </header>
+						<footer class="footer">
 
-                        <footer class="footer">
+							<?php if ($lang != "pl"): ?>
 
-                            <?php if ($lang != "pl"): ?>
+								<h6>Website of restaurant</h6>
 
-                                <h6>Website of therapy cabinet</h6>
+							<?php else: ?>
 
-                            <?php else: ?>
+								<h6>Strona internetowa restauracji</h6>
 
-                                <h6>Strona internetowa gabinetu</h6>
+							<?php endif; ?>
 
-                            <?php endif; ?>
+							<h4><a href="https://nowajaga.pl/">nowajaga.pl</a></h4>
 
-                            <h4><a href="http://szplotka.pl/">Szplotka.pl</a></h4>
+						</footer>
 
-                        </footer>
-
-                    </article>
+					</div>
 
                 </div>
 
                 <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
 
-                    <article class="about">
+                    <div class="about">
 
                         <header class="header">
 
@@ -448,7 +438,7 @@ if(!isset($_GET['lang'])) {
 
                         <?php endif; ?>
 
-                    </article>
+                    </div>
 
                 </div>
 
@@ -459,74 +449,74 @@ if(!isset($_GET['lang'])) {
             <div class="row">
 
 				<div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+					
+					<div class="item">
 
-                    <article class="item">
+						<header class="header">
 
-                        <header class="header">
+							<img src="dist/img/portfolio_szplotka.jpg" alt="Page 3">
+							<div class="icon">
+								<i class="fa fa-picture-o" aria-hidden="true"></i>
+							</div>
 
-                            <img src="dist/img/portfolio_ecommerce.jpg" alt="Page 3">
-                            <div class="icon">
-								<i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                            </div>
+						</header>
 
-                        </header>
+						<footer class="footer">
 
-                        <footer class="footer">
+							<?php if ($lang != "pl"): ?>
 
-                            <?php if ($lang != "pl"): ?>
+								<h6>Website of therapy cabinet</h6>
 
-                                <h6>React application</h6>
-								<h4><a href="https://github.com/Ghornon/Ecommerce-app">Ecommerce app</a></h4>
+							<?php else: ?>
 
-                            <?php else: ?>
+								<h6>Strona internetowa gabinetu</h6>
 
-                                <h6>Aplikacja napisana w React</h6>
-								<h4><a href="https://github.com/Ghornon/Ecommerce-app">Sklep internetowy</a></h4>
+							<?php endif; ?>
 
-                            <?php endif; ?>
+							<h4><a href="http://szplotka.pl/">Szplotka.pl</a></h4>
 
-                        </footer>
+						</footer>
 
-                    </article>
+						</div>
 
                 </div>
 
 				<div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
 
-                    <article class="item">
+					<div class="item">
 
-                        <header class="header">
+						<header class="header">
 
-                            <img src="dist/img/portfolio_gulp-automation.jpg" alt="Page 3">
-                            <div class="icon">
-								<i class="fa fa-terminal" aria-hidden="true"></i>
-                            </div>
+							<img src="dist/img/portfolio_buttonstudio.jpg" alt="Page 1">
+							<div class="icon">
+								<i class="fa fa-camera" aria-hidden="true"></i>
+							</div>
 
-                        </header>
+						</header>
 
-                        <footer class="footer">
+						<footer class="footer">
 
-                            <?php if ($lang != "pl"): ?>
+							<?php if ($lang != "pl"): ?>
 
-                                <h6>Gulp tasks ruiner</h6>
+								<h6>My old website</h6>
 
-                            <?php else: ?>
+							<?php else: ?>
 
-                                <h6>Zestaw narzędzi gulp</h6>
+								<h6>Moja dawna strona www</h6>
 
-                            <?php endif; ?>
+							<?php endif; ?>
 
-                            <h4><a href="https://github.com/Ghornon/gulp-automation">Gulp-automation</a></h4>
+							<h4><a href="http://portfolio.buttonstudio.net/buttonstudio/">Button Studio</a></h4>
 
-                        </footer>
+						</footer>
 
-                    </article>
+					</div>
 
                 </div>
 
                 <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
 
-                    <article class="item">
+                    <div class="item">
 
                         <header class="header">
 
@@ -541,11 +531,11 @@ if(!isset($_GET['lang'])) {
 
                             <?php if ($lang != "pl"): ?>
 
-                                <h6>Portfolio / Blog</h6>
+                                <h6>Static website</h6>
 
                             <?php else: ?>
 
-                                <h6>Wizytówka / Blog</h6>
+                                <h6>Statyczna strona www</h6>
 
                             <?php endif; ?>
 
@@ -553,13 +543,13 @@ if(!isset($_GET['lang'])) {
 
                         </footer>
 
-                    </article>
+                    </div>
 
                 </div>
 
                 <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
 
-                    <article class="item">
+                    <div class="item">
 
                         <header class="header">
 
@@ -586,7 +576,7 @@ if(!isset($_GET['lang'])) {
 
                         </footer>
 
-                    </article>
+                    </div>
 
                 </div>
 
@@ -670,7 +660,7 @@ if(!isset($_GET['lang'])) {
                             <i class="fa fa-envelope-o" aria-hidden="true"></i>
                             <p>
                                 You may use the contact form or<br>directly if that's how you that prefer.<br>
-                                <a href="mailto:contact@buttonstudio.net">contact@buttonstudio.net</a><br>
+								<span class="reverse">ten.oidutsnottub@tcatnoc</span><br>
                                 Say hello!<br>
                                 I'd <i class="fa fa-heart-o pulse" aria-hidden="true"></i><span class="sr-only">love</span> to hear about your project
                             </p>
@@ -681,7 +671,7 @@ if(!isset($_GET['lang'])) {
                             <i class="fa fa-envelope-o" aria-hidden="true"></i>
                             <p>
                                 Możesz użyć formularza kontaktowego lub<br>wysłać maila bezpośrednio, jeśli tak właśnie wolisz.<br>
-                                <a href="mailto:contact@buttonstudio.net">contact@buttonstudio.net</a><br>
+								<span class="reverse">ten.oidutsnottub@tcatnoc</span><br>
                                 Powiedz cześć!<br>
                                 Chciałbym usłyszeć <i class="fa fa-heart-o pulse" aria-hidden="true"></i><span class="sr-only">o</span> Twoim projekcie 
                             </p>
