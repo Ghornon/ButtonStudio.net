@@ -44,7 +44,7 @@ if(!isset($_GET['lang'])) {
     <meta property="og:image" content="dist/img/ogimage.jpg" />
 
     <!-- Text/css -->
-    <link href="dist/bundle.css?version=1.5" type="text/css" rel="stylesheet">
+    <link href="dist/bundle.css?version=1.5.1" type="text/css" rel="stylesheet">
     <link rel="shortcut icon" type="image/png" href="dist/img/favicon.png">
     
     <!-- Title -->
@@ -293,7 +293,7 @@ if(!isset($_GET['lang'])) {
                                 Projektuje i wykonuje strony internetowe od strony wizualnej (front-end'u).<br>
                                 Tworzę interfejsy użytkownika krok po kroku zaczynając od wymyślenia szablonu i kończąc na wpełni funkcjonalnej stronie www.<br>
                                 <br><br>
-                                Używam najnowszych technolgii takich jak HTML 5, CSS 3, JavaScript ES6, responsive web design, dlatego dlatego też każdy projekt jest nowoczesny oraz jest dostosowany do najwyższych standardów takich jak W3C.
+                                Używam najnowszych technolgii takich jak HTML 5, CSS 3, JavaScript ES6, responsive web design, dlatego też każdy projekt jest nowoczesny oraz jest dostosowany do najwyższych standardów takich jak W3C.
                             </p>
 
                         <?php endif; ?>
@@ -603,11 +603,11 @@ if(!isset($_GET['lang'])) {
                        
                         <?php if ($lang != "pl"): ?>
                            
-                            <p>Designing is a challenge for human creativity. The task of a designer is not just to create a drawing or a web page template, but to address the needs of the market and the customer so as to create a cohesive whole. Designing something that is supposed to be effecient and eye-friendly is a challenge.</p>
+                            <p>Designing is a challenge for human creativity. The task of a designer is not just to create a drawing or a web page template, but to address the needs of the market and the customer so as to create a cohesive whole. Designing something that is supposed to be effiecient and eye-friendly is a challenge.</p>
                         
                         <?php else: ?>
                         
-                            <p>Projektowanie jest wyzwaniem dla ludzkiej kreatywności. Zadaniem designer'a nie jest tylko stworzeniem rysunku czy też szablonu strony internetowej, ale przewidzenie wymagań rynku i klienta tak aby stworzyć między nim spójną całość. Zaprojektowanie czegoś co ma być efektywne i przyjazne dla oka jest nie lada wyzwaniem.</p>
+                            <p>Projektowanie jest wyzwaniem dla ludzkiej kreatywności. Zadaniem designer ‘a nie jest tylko stworzeniem rysunku czy też szablonu strony internetowej, ale przewidzenie wymagań rynku i klienta tak aby stworzyć między nim spójną całość. Zaprojektowanie czegoś co ma być efektywne i przyjazne dla oka jest nie lada wyzwaniem.</p>
                         
                         <?php endif; ?>
                         
@@ -624,7 +624,7 @@ if(!isset($_GET['lang'])) {
                         
                         <?php if ($lang != "pl"): ?>
                         
-                            <p>A brand is only as successful as it's implementation, great products should not be defined by design alone, but also by functionality and great user experience. Developers need to strive for clean, elegant and efficient code to assure long-term sustainability and keep software's maintainability.</p>
+                            <p>A brand is only as successful as its implementation, great products should not be defined by design alone, but also by functionality and great user experience. Developers need to strive for clean, elegant and efficient code to assure long-term sustainability and keep software's maintainability.</p>
                         
                         <?php else: ?>
                         
